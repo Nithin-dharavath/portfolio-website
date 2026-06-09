@@ -224,6 +224,7 @@ h1, h2, h3, h4 {
 
 .hero-ctas {
     display: flex;
+    align-items: center;
     gap: 1.5rem;
     margin-bottom: 3rem;
 }

@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Toggle
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
 
@@ -10,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Smooth Scrolling with Active State Update
     const sections = document.querySelectorAll('section');
     const navLinksArray = document.querySelectorAll('.nav-link');
 
@@ -32,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Intersection Observer for Skill Bars Animation
     const skillBars = document.querySelectorAll('.skill-progress');
     const skillSection = document.querySelector('.skill-section');
 
@@ -43,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     skillBars.forEach(bar => {
                         const targetWidth = bar.style.width;
                         bar.style.transition = 'width 1.5s ease-out';
-                        // The width is already set in HTML, but this ensures it animates on entry
                         bar.style.width = targetWidth;
                     });
                     observer.unobserve(entry.target);
@@ -54,10 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(skillSection);
     }
 
-    // Form Submission Handling
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = contactForm.querySelector('button');
             const originalText = btn.innerText;
@@ -65,18 +60,33 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerText = 'Sending...';
             btn.disabled = true;
 
-            // Simulate API call
-            setTimeout(() => {
-                btn.innerText = 'Message Sent! ✓';
-                btn.style.background = '#22c55e';
+            const formData = new FormData(contactForm);
 
-                setTimeout(() => {
-                    btn.innerText = originalText;
-                    btn.disabled = false;
-                    btn.style.background = '';
-                    contactForm.reset();
-                }, 3000);
-            }, 1500);
+            try {
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    body: formData,
+                });
+                const data = await res.json();
+
+                if (data.ok) {
+                    btn.innerText = 'Message Sent! ✓';
+                    btn.style.background = '#22c55e';
+                } else {
+                    btn.innerText = 'Failed! Try Again';
+                    btn.style.background = '#ef4444';
+                }
+            } catch {
+                btn.innerText = 'Failed! Try Again';
+                btn.style.background = '#ef4444';
+            }
+
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.disabled = false;
+                btn.style.background = '';
+                contactForm.reset();
+            }, 3000);
         });
     }
 });
