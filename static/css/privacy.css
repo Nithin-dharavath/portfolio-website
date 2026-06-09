@@ -1,0 +1,116 @@
+.privacy-page {
+    padding: 140px 0 100px;
+    min-height: 100vh;
+}
+
+.privacy-header {
+    margin-bottom: 3rem;
+}
+
+.privacy-breadcrumb {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.privacy-breadcrumb a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.privacy-breadcrumb a:hover {
+    color: var(--accent);
+}
+
+.privacy-breadcrumb span {
+    color: var(--accent);
+}
+
+.privacy-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.privacy-intro {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+.privacy-section {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    transition: var(--transition);
+}
+
+.privacy-section:hover {
+    border-color: rgba(255, 107, 107, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.privacy-section h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+.privacy-section p {
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.privacy-section ul {
+    list-style: none;
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.privacy-section ul li {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.privacy-section ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.privacy-section a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.privacy-section a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .privacy-page {
+        padding: 120px 0 60px;
+    }
+    .privacy-section {
+        padding: 1.25rem;
+    }
+}

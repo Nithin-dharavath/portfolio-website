@@ -211,6 +211,7 @@ h1, h2, h3, h4 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     background: linear-gradient(to right, #fff, var(--text-muted));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -616,9 +617,9 @@ h1, h2, h3, h4 {
     margin-bottom: 0.25rem;
 }
 
-.grad-red { background: linear-gradient(to right, var(--accent), var(--accent-dark)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.grad-purple { background: linear-gradient(to right, #a855f7, #7e22ce); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.grad-blue { background: linear-gradient(to right, #3b82f6, #1d4ed8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.grad-red { background: linear-gradient(to right, var(--accent), var(--accent-dark)); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.grad-purple { background: linear-gradient(to right, #a855f7, #7e22ce); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.grad-blue { background: linear-gradient(to right, #3b82f6, #1d4ed8); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
 .stat-label {
     font-size: 0.75rem;
@@ -662,6 +663,20 @@ h1, h2, h3, h4 {
     background: linear-gradient(to right, var(--accent), #a855f7);
     border-radius: 10px;
     transition: width 1.5s ease-out;
+}
+
+.skills-nav-icon {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.skills-nav-icon:hover {
+    color: var(--accent);
+    transform: translateX(4px);
 }
 
 /* Projects Section */

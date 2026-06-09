@@ -18,6 +18,7 @@ app = FastAPI(title="Nithin Dharavath - Portfolio")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 BASE_DIR = Path(__file__).resolve().parent
+TEMPLATES_DIR = BASE_DIR / "templates"
 
 
 @app.on_event("startup")
@@ -31,7 +32,22 @@ async def startup():
 
 @app.get("/", response_class=HTMLResponse)
 async def index():
-    return HTMLResponse((BASE_DIR / "index.html").read_text(encoding="utf-8"))
+    return HTMLResponse((TEMPLATES_DIR / "index.html").read_text(encoding="utf-8"))
+
+
+@app.get("/skills", response_class=HTMLResponse)
+async def skills():
+    return HTMLResponse((TEMPLATES_DIR / "skills.html").read_text(encoding="utf-8"))
+
+
+@app.get("/privacy", response_class=HTMLResponse)
+async def privacy():
+    return HTMLResponse((TEMPLATES_DIR / "privacy.html").read_text(encoding="utf-8"))
+
+
+@app.get("/terms", response_class=HTMLResponse)
+async def terms():
+    return HTMLResponse((TEMPLATES_DIR / "terms.html").read_text(encoding="utf-8"))
 
 
 @app.post("/api/contact")
