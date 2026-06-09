@@ -832,6 +832,34 @@ h1, h2, h3, h4 {
     overflow: hidden;
 }
 
+.preview-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    text-align: center;
+}
+
+.project-preview-image {
+    width: 88px;
+    height: 88px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.25));
+}
+
+.project-card.featured .project-preview-image {
+    width: 108px;
+    height: 108px;
+}
+
+.project-preview-caption {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
 .project-card:not(.featured) .project-preview {
     height: 200px;
     margin-bottom: 2rem;
