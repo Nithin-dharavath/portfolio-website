@@ -2,10 +2,12 @@ import logging
 import re
 from pathlib import Path
 
-from fastapi import FastAPI, Form, Depends
+from fastapi import FastAPI, Form, Depends, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
+
+from middleware.rate_limit import contact_rate_limiter
 
 from database.session import get_db, test_connection, engine
 from database.models import Base, ContactMessage
@@ -52,12 +54,14 @@ async def terms():
 
 @app.post("/api/contact")
 async def contact(
+    request: Request,
     name: str = Form(...),
     email: str = Form(...),
     subject: str = Form(...),
     message: str = Form(...),
     db: Session = Depends(get_db),
 ):
+    contact_rate_limiter.check(request)
     errors = []
     if not name.strip():
         errors.append("Name is required.")
