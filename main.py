@@ -15,7 +15,7 @@ from middleware import SecurityHeadersMiddleware
 from middleware.rate_limit import contact_rate_limiter
 
 from database.session import get_db, test_connection
-from database.models import ContactMessage
+from database.models import Base, ContactMessage
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -46,6 +46,10 @@ class RequestSizeLimitMiddleware(BaseHTTPMiddleware):
 async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     if test_connection():
         logger.info("Database connection successful.")
+        # Automatically create tables if they don't exist
+        from database.session import engine
+        Base.metadata.create_all(bind=engine)
+        logger.info("Database tables verified/created.")
     else:
         logger.warning("Database connection failed - contact form will not work.")
     yield
