@@ -1,3 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
 venv/
-.claude/
+.venv/
+env/
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Ruff
+.ruff_cache/
+
+# MyPy
+.mypy_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# Environment Variables
 .env
+.env.local
+.env.*
+
+# Logs
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# SQLite Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Test Reports
+coverage.xml
+pytest-report.xml
+
+# Build Files
+build/
+dist/
+*.egg-info/
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+
+# OpenCode / Claude
+.opencode/
+.claude/
+
+# Python Packaging
+pip-wheel-metadata/
+
+# Cache
+.cache/

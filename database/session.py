@@ -1,7 +1,7 @@
 import logging
 
 from sqlalchemy import create_engine, text
-from sqlalchemy.orm import sessionmaker, Session
+from sqlalchemy.orm import sessionmaker
 
 from .config import DATABASE_URL
 
