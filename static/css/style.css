@@ -114,6 +114,8 @@ h1, h2, h3, h4 {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.5px;
+    text-decoration: none;
+    color: inherit;
 }
 
 .nav-logo span {
@@ -1161,6 +1163,19 @@ h1, h2, h3, h4 {
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(15, 23, 42, 0.97);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border-color);
+        padding: 1.5rem 2rem;
+        gap: 1.25rem;
+    }
+    .nav-links.active {
+        display: flex;
     }
     .nav-toggle {
         display: flex;
@@ -1180,8 +1195,14 @@ h1, h2, h3, h4 {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+    .project-card.featured {
+        grid-column: span 1;
+    }
     .project-card.featured .project-main {
         grid-template-columns: 1fr;
+    }
+    .project-card:not(.featured) .project-preview {
+        height: 180px;
     }
     .project-preview {
         order: -1;
