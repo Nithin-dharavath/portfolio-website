@@ -9,6 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    if (navLinks) {
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                navToggle.classList.remove('open');
+            });
+        });
+    }
+
     const sections = document.querySelectorAll('section');
     const navLinksArray = document.querySelectorAll('.nav-link');
 
