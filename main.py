@@ -1,4 +1,5 @@
 import logging
+import os
 import re
 from collections.abc import AsyncGenerator
 from contextlib import asynccontextmanager
@@ -8,12 +9,13 @@ from fastapi import FastAPI, Form, Depends, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
+from starlette.middleware.base import BaseHTTPMiddleware
 
 from middleware import SecurityHeadersMiddleware
 from middleware.rate_limit import contact_rate_limiter
 
-from database.session import get_db, test_connection, engine
-from database.models import Base, ContactMessage
+from database.session import get_db, test_connection
+from database.models import ContactMessage
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -29,21 +31,41 @@ MAX_MESSAGE_LENGTH = 10000
 EMAIL_REGEX = re.compile(r"^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$")
 
 
+class RequestSizeLimitMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        content_length = request.headers.get("content-length")
+        if content_length and int(content_length) > 1_048_576:
+            return JSONResponse(
+                {"ok": False, "message": "Request too large."},
+                status_code=413,
+            )
+        return await call_next(request)
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     if test_connection():
-        Base.metadata.create_all(bind=engine)
         logger.info("Database connection successful.")
     else:
-        logger.warning("Database connection failed — contact form will not work.")
+        logger.warning("Database connection failed - contact form will not work.")
     yield
 
 
 app = FastAPI(title="Nithin Dharavath - Portfolio", lifespan=lifespan)
 
+app.add_middleware(RequestSizeLimitMiddleware)
 app.add_middleware(SecurityHeadersMiddleware)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
+
+
+@app.get("/health")
+async def health():
+    db_ok = test_connection()
+    return JSONResponse({
+        "status": "ok" if db_ok else "degraded",
+        "database": "connected" if db_ok else "disconnected",
+    })
 
 
 @app.get("/", response_class=HTMLResponse)

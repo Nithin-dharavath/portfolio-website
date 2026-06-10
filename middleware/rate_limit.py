@@ -12,6 +12,16 @@ class RateLimiter:
         self._cleanup_interval = 300
         self._last_cleanup = time.monotonic()
 
+    def _get_client_ip(self, request: Request) -> str:
+        forwarded = getattr(request, "headers", None)
+        if forwarded is not None:
+            forwarded_val = forwarded.get("X-Forwarded-For")
+            if forwarded_val:
+                return forwarded_val.split(",")[0].strip()
+        if request.client:
+            return request.client.host
+        return "unknown"
+
     def _cleanup(self) -> None:
         now = time.monotonic()
         if now - self._last_cleanup < self._cleanup_interval:
@@ -25,7 +35,7 @@ class RateLimiter:
 
     def check(self, request: Request) -> None:
         self._cleanup()
-        ip = request.client.host if request.client else "unknown"
+        ip = self._get_client_ip(request)
         now = time.monotonic()
         cutoff = now - self.window_seconds
         timestamps = self._clients[ip]

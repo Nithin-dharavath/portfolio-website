@@ -63,3 +63,5 @@ pip-wheel-metadata/
 
 # Cache
 .cache/
+
+session-ses_14f9.md*

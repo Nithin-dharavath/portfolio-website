@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: portfolio
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: "8000"
+      - key: DB_HOST
+        value: gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com
+      - key: DB_PORT
+        value: "4000"
+      - key: DB_NAME
+        value: portfolio
+      - key: DB_POOL_SIZE
+        value: "5"
+      - key: DB_MAX_OVERFLOW
+        value: "10"
+      - key: DB_POOL_RECYCLE
+        value: "3600"
+      - key: DB_POOL_TIMEOUT
+        value: "30"
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_SSL_CA
+        sync: false
