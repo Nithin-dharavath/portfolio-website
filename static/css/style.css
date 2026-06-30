@@ -665,7 +665,12 @@ h1, h2, h3, h4 {
     background: linear-gradient(to right, var(--accent), #a855f7);
     border-radius: 10px;
     transition: width 1.5s ease-out;
+    width: 0;
 }
+
+.skill-progress-90 { width: 90%; }
+.skill-progress-85 { width: 85%; }
+.skill-progress-80 { width: 80%; }
 
 .skills-nav-icon {
     display: flex;
@@ -997,6 +1002,18 @@ h1, h2, h3, h4 {
 
 .btn.full-width {
     width: 100%;
+}
+
+.btn-success {
+    background: #22c55e;
+    color: white;
+    border: none;
+}
+
+.btn-error {
+    background: #ef4444;
+    color: white;
+    border: none;
 }
 
 /* Footer */

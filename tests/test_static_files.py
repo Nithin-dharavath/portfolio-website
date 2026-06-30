@@ -12,12 +12,8 @@ class TestStaticFiles:
         assert response.status_code == 200
         assert "text/css" in response.headers["content-type"]
 
-    async def test_css_privacy_served(self, client):
-        response = await client.get("/static/css/privacy.css")
-        assert response.status_code == 200
-
-    async def test_css_terms_served(self, client):
-        response = await client.get("/static/css/terms.css")
+    async def test_css_legal_served(self, client):
+        response = await client.get("/static/css/legal.css")
         assert response.status_code == 200
 
     async def test_js_main_served(self, client):
@@ -46,6 +42,6 @@ class TestStaticFiles:
         response = await client.get("/static/../.env")
         assert response.status_code in (400, 404)
 
-    async def test_favicon_not_configured(self, client):
-        response = await client.get("/favicon.ico")
-        assert response.status_code == 404
+    async def test_favicon_configured(self, client):
+        response = await client.get("/static/favicon.svg")
+        assert response.status_code == 200

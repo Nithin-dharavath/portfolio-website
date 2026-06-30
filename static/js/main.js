@@ -43,13 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const skillSection = document.querySelector('.skill-section');
 
     if (skillSection) {
+        // Bars start at 0 width via CSS; animate to target on scroll.
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     skillBars.forEach(bar => {
-                        const targetWidth = bar.style.width;
-                        bar.style.transition = 'width 1.5s ease-out';
-                        bar.style.width = targetWidth;
+                        bar.style.width = bar.dataset.target + '%';
                     });
                     observer.unobserve(entry.target);
                 }
@@ -70,30 +69,34 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.disabled = true;
 
             const formData = new FormData(contactForm);
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 10000);
 
             try {
                 const res = await fetch('/api/contact', {
                     method: 'POST',
                     body: formData,
+                    signal: controller.signal,
                 });
+                clearTimeout(timeoutId);
                 const data = await res.json();
 
                 if (data.ok) {
                     btn.innerText = 'Message Sent! ✓';
-                    btn.style.background = '#22c55e';
+                    btn.className = 'btn btn-success full-width';
                 } else {
                     btn.innerText = 'Failed! Try Again';
-                    btn.style.background = '#ef4444';
+                    btn.className = 'btn btn-error full-width';
                 }
             } catch {
                 btn.innerText = 'Failed! Try Again';
-                btn.style.background = '#ef4444';
+                btn.className = 'btn btn-error full-width';
             }
 
             setTimeout(() => {
                 btn.innerText = originalText;
                 btn.disabled = false;
-                btn.style.background = '';
+                btn.className = 'btn btn-primary full-width';
                 contactForm.reset();
             }, 3000);
         });
