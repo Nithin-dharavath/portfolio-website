@@ -1,3 +1,4 @@
+import os
 import time
 from collections import defaultdict
 
@@ -6,8 +7,10 @@ from fastapi import HTTPException, Request
 
 class RateLimiter:
     def __init__(self, max_requests: int = 5, window_seconds: int = 60):
-        self.max_requests = max_requests
-        self.window_seconds = window_seconds
+        env_limit = os.getenv("CONTACT_RATE_LIMIT")
+        env_window = os.getenv("CONTACT_RATE_WINDOW")
+        self.max_requests = int(env_limit) if env_limit is not None else max_requests
+        self.window_seconds = int(env_window) if env_window is not None else window_seconds
         self._clients: dict[str, list[float]] = defaultdict(list)
         self._cleanup_interval = 300
         self._last_cleanup = time.monotonic()

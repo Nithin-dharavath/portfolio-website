@@ -1,3 +1,4 @@
+import html
 import logging
 import os
 import re
@@ -8,6 +9,7 @@ from pathlib import Path
 from fastapi import FastAPI, Form, Depends, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from starlette.middleware.base import BaseHTTPMiddleware
 
@@ -22,6 +24,9 @@ logger = logging.getLogger(__name__)
 
 BASE_DIR = Path(__file__).resolve().parent
 TEMPLATES_DIR = BASE_DIR / "templates"
+templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
+
+MAX_REQUEST_SIZE = int(os.getenv("MAX_REQUEST_SIZE", "1048576"))
 
 MAX_NAME_LENGTH = 100
 MAX_EMAIL_LENGTH = 255
@@ -34,7 +39,7 @@ EMAIL_REGEX = re.compile(r"^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$")
 class RequestSizeLimitMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
         content_length = request.headers.get("content-length")
-        if content_length and int(content_length) > 1_048_576:
+        if content_length and int(content_length) > MAX_REQUEST_SIZE:
             return JSONResponse(
                 {"ok": False, "message": "Request too large."},
                 status_code=413,
@@ -63,6 +68,11 @@ app.add_middleware(SecurityHeadersMiddleware)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
+@app.exception_handler(404)
+async def not_found(request: Request, _):
+    return templates.TemplateResponse(request=request, name="404.html", status_code=404)
+
+
 @app.get("/health")
 async def health():
     db_ok = test_connection()
@@ -73,23 +83,23 @@ async def health():
 
 
 @app.get("/", response_class=HTMLResponse)
-async def index():
-    return HTMLResponse((TEMPLATES_DIR / "index.html").read_text(encoding="utf-8"))
+async def index(request: Request):
+    return templates.TemplateResponse(request=request, name="index.html")
 
 
 @app.get("/skills", response_class=HTMLResponse)
-async def skills():
-    return HTMLResponse((TEMPLATES_DIR / "skills.html").read_text(encoding="utf-8"))
+async def skills(request: Request):
+    return templates.TemplateResponse(request=request, name="skills.html")
 
 
 @app.get("/privacy", response_class=HTMLResponse)
-async def privacy():
-    return HTMLResponse((TEMPLATES_DIR / "privacy.html").read_text(encoding="utf-8"))
+async def privacy(request: Request):
+    return templates.TemplateResponse(request=request, name="privacy.html")
 
 
 @app.get("/terms", response_class=HTMLResponse)
-async def terms():
-    return HTMLResponse((TEMPLATES_DIR / "terms.html").read_text(encoding="utf-8"))
+async def terms(request: Request):
+    return templates.TemplateResponse(request=request, name="terms.html")
 
 
 @app.post("/api/contact")
@@ -136,10 +146,10 @@ async def contact(
 
     try:
         entry = ContactMessage(
-            name=name,
-            email=email,
-            subject=subject,
-            message=message,
+            name=html.escape(name),
+            email=html.escape(email),
+            subject=html.escape(subject),
+            message=html.escape(message),
         )
         db.add(entry)
         db.commit()

@@ -11,6 +11,12 @@ DB_NAME: str = os.getenv("DB_NAME", "portfolio")
 DB_USER: str = os.getenv("DB_USER", "root")
 DB_PASSWORD: str = os.getenv("DB_PASSWORD", "")
 
+_REQUIRED = {"DB_HOST": DB_HOST, "DB_USER": DB_USER, "DB_PASSWORD": DB_PASSWORD, "DB_NAME": DB_NAME}
+if DB_HOST not in ("localhost", "127.0.0.1"):
+    missing = [k for k, v in _REQUIRED.items() if not v]
+    if missing:
+        raise ValueError(f"Missing required environment variables: {', '.join(missing)}")
+
 DB_CONFIG: dict[str, str | int] = {
     "host": DB_HOST,
     "port": DB_PORT,

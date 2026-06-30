@@ -34,7 +34,8 @@ class TestHtmlRoutes:
     async def test_index_html_has_meta_tags(self, client):
         response = await client.get("/")
         assert 'name="description"' in response.text
-        assert "og:" not in response.text
+        assert 'property="og:title"' in response.text
+        assert 'name="twitter:card"' in response.text
 
     async def test_routes_return_different_content(self, client):
         index_resp = await client.get("/")
