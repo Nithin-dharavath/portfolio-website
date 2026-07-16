@@ -10,22 +10,25 @@ A professional portfolio website built with FastAPI, featuring a responsive desi
 | Database   | MySQL (TiDB Cloud) via SQLAlchemy/PyMySQL |
 | Frontend   | Semantic HTML, CSS, Vanilla JS            |
 | Testing    | pytest, pytest-asyncio                   |
-| Deployment | Docker, Render                            |
+| Deployment | Vercel                                    |
 
 ## Project Structure
 
 ```
+├── api/
+│   └── index.py         # Vercel serverless entry point
 ├── main.py              # FastAPI app entry point
 ├── database/            # DB config, session, models, init.sql
 ├── middleware/          # Security headers, rate limiting
 ├── static/
 │   ├── css/             # style.css, skills.css, privacy.css, terms.css
 │   ├── js/              # main.js, skills.js
-│   └── resume/          # Resume downloads
+│   ├── resume/          # Resume downloads
+│   ├── robots.txt       # Crawler instructions
+│   └── og-image.svg     # Social preview image
 ├── templates/           # index.html, skills.html, privacy.html, terms.html
 ├── tests/               # Unit, integration, e2e, performance tests
-├── Dockerfile
-├── render.yaml          # Render deployment config
+├── vercel.json
 └── requirements.txt
 ```
 
@@ -89,7 +92,7 @@ pytest --cov=. --cov-report=term  # With coverage
 
 ## Deployment
 
-The project is deployed on Render via Docker. See `render.yaml` for configuration. Key environment variables:
+The project is deployed on Vercel. The `api/index.py` file serves as the serverless entry point. Key environment variables:
 
 | Variable      | Description                    |
 | ------------- | ------------------------------ |
@@ -98,7 +101,7 @@ The project is deployed on Render via Docker. See `render.yaml` for configuratio
 | `DB_NAME`     | Database name                  |
 | `DB_USER`     | Database user                  |
 | `DB_PASSWORD` | Database password              |
-| `PORT`        | Application port (default 8000) |
+| `PORT`     | Application port (default 8000, not needed on Vercel) |
 
 ## Code Quality
 

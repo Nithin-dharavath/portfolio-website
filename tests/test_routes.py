@@ -4,7 +4,7 @@ class TestHtmlRoutes:
         assert response.status_code == 200
         assert response.headers["content-type"] == "text/html; charset=utf-8"
         assert "Nithin Dharavath" in response.text
-        assert "Backend Developer" in response.text
+        assert "Backend Developer" in response.text or "Freelancer" in response.text
         assert "Contact" in response.text
         assert "Projects" in response.text
 

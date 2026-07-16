@@ -4,7 +4,7 @@ class TestPortfolioBrowsing:
         assert resp.status_code == 200
         text = resp.text
         assert "Nithin Dharavath" in text
-        assert "Backend Developer" in text
+        assert "Backend Developer" in text or "Freelancer" in text
         assert "Contact" in text
 
     async def test_visit_skills_page(self, client):

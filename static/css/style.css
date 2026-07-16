@@ -218,6 +218,14 @@ h1, h2, h3, h4 {
     -webkit-text-fill-color: transparent;
 }
 
+.hero-freelancer {
+    font-size: 1.5rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: -0.75rem;
+    margin-bottom: 1.5rem;
+}
+
 .hero-description {
     font-size: 1.1rem;
     color: var(--text-muted);
@@ -1209,6 +1217,10 @@ h1, h2, h3, h4 {
     }
     .hero-main-title {
         font-size: 2.5rem;
+    }
+    .hero-freelancer {
+        font-size: 1.25rem;
+        margin-top: -0.5rem;
     }
     .services-grid {
         grid-template-columns: 1fr;
