@@ -26,7 +26,7 @@ class TestStaticFiles:
         assert response.status_code == 200
 
     async def test_pdf_resume_served(self, client):
-        response = await client.get("/static/resume/Nitin_Dharavathu_Resume.pdf")
+        response = await client.get("/static/resume/nithin-resume.pdf")
         assert response.status_code == 200
         assert "application/pdf" in response.headers["content-type"]
 
