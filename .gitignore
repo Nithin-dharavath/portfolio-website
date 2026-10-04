@@ -54,9 +54,10 @@ tmp/
 temp/
 *.tmp
 
-# OpenCode / Claude
+# OpenCode / Claude / Codex
 .opencode/
 .claude/
+.codex/
 
 # Python Packaging
 pip-wheel-metadata/

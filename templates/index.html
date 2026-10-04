@@ -2,178 +2,480 @@
 {% set active_page = "home" %}
 
 {% block content %}
-    <section id="home" class="hero">
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <div class="welcome-badge">Welcome to my portfolio</div>
-                <h1 class="hero-title"></h1>
-                <p class="hero-subtitle">I'm <span class="highlight">Nithin</span></p>
-                <h2 class="hero-main-title">Backend Developer</h2>
-                <p class="hero-freelancer">Freelancer</p>
-                <p class="hero-description"> Building scalable backend systems, AI-powered applications, and intelligent automation that solve real-world problems. </p>
-                <div class="hero-ctas">
-                    <a href="#contact" class="btn btn-primary">Hire Me</a>
-                    <a href="/static/resume/nithin-resume.pdf" download class="btn btn-secondary">Download CV</a>
-                    <a href="https://www.linkedin.com/in/nithin-dharavathu/" target="_blank" class="social-icon" aria-label="LinkedIn">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    </a>
+    <!-- Hero Landing Page: Matching Reference Design with Animated 3D Stage -->
+    <section id="home" class="hero-stage-section">
+        <div class="container hero-stage-container">
+            
+            <!-- Centered Welcome Header in the Middle of the Page -->
+            <div class="hero-header-row hero-header-centered">
+                <div class="hero-welcome-wrap">
+                    <span class="hero-brand-mark" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <rect width="24" height="24" rx="6" fill="#f04438"/>
+                            <path d="M12 4L13.8 10.2L20 12L13.8 13.8L12 20L10.2 13.8L4 12L10.2 10.2L12 4Z" fill="#ffffff"/>
+                        </svg>
+                    </span>
+                    <h1 class="hero-welcome-title">Welcome to my Portfolio</h1>
                 </div>
-                <div class="tech-stack">
-                    <p class="stack-label">Tech Stack</p>
-                    <div class="stack-pills">
-                        <span class="pill">HTML5 & CSS3</span>
-                        <span class="pill">JavaScript</span>
-                        <span class="pill">Python</span>
-                        <span class="pill">FastAPI & Django</span>
-                        <span class="pill">Git & GitHub</span>
-                        <span class="pill">MySQL</span>
-                        <span class="pill">Workflow Automation</span>
-                        <span class="pill">AI Agents</span>
-                        <span class="pill">Docker</span>
+            </div>
+
+            <!-- Wide Cinematic Centerpiece Card (Replaces person image with Animated Name & Tagline + 3D Kinetic Sculpture) -->
+            <div class="hero-center-stage">
+                <!-- Three.js 3D Kinetic Canvas Backdrop -->
+                <canvas id="hero-3d-canvas" class="stage-3d-canvas" aria-label="Interactive 3D Kinetic AI Sculpture"></canvas>
+
+                <!-- High Quality Animated Center Content -->
+                <div class="stage-overlay-content">
+                    <div class="stage-badge-pill">
+                        <span class="radar-dot" aria-hidden="true"></span>
+                        <span class="radar-text">Autonomous Systems Active</span>
+                    </div>
+
+                    <!-- Main Name with High-End Shimmer Animation -->
+                    <h2 class="stage-name-animated" data-text="Nithin Dharavathu">Nithin Dharavathu</h2>
+
+                    <!-- Tagline Down with Status Indicator -->
+                    <div class="stage-tagline-wrapper">
+                        <span class="tagline-bullet" aria-hidden="true">/</span>
+                        <span class="stage-tagline">AI Engineer</span>
+                        <span class="tagline-sub">&bull; Freelancer &amp; Systems Builder</span>
+                    </div>
+
+                    <div class="stage-actions">
+                        <a href="#contact" class="stage-btn-primary">
+                            <span>Hire Me</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <a href="/static/resume/nithin-resume.pdf" class="stage-btn-ghost" download="Nithin_Dharavath_CV.pdf">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            <span>Download CV</span>
+                        </a>
+                        <a href="#projects" class="stage-btn-ghost">
+                            <span>Explore Projects</span>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="hero-visual">
-                <div class="profile-card">
-                    <div class="profile-emoji">👨‍💻</div>
-                    <div class="availability">
-                        <span class="pulse"></span>
-                        Available for work
-                    </div>
+
+                <!-- 3D Hint Indicator -->
+                <div class="stage-interaction-hint" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+                    <span>Interact with 3D Field</span>
                 </div>
-                <div class="floating-card card-exp">
-                    <div class="card-value">Real-World</div>
-                    <div class="card-label">impacts</div>
-                </div>
-                <div class="floating-card card-proj">
-                    <div class="card-value">5+</div>
-                    <div class="card-label">Projects</div>
-                </div>
-                <div class="hero-glow-orb"></div>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
+
+            <!-- Philosophical Philosophy Statement (Exact Match to Reference Image) -->
+            <div class="hero-philosophy-quote">
+                <p class="philosophy-text">
+                    <strong>Evolving through</strong> <span class="muted-text">logic and systemic execution.</span> 
+                    <strong>The milestones that shaped my</strong> <span class="muted-text">technical philosophy</span>
+                </p>
             </div>
+
+            <!-- Bottom Stat Metrics Strip (Authentic Numbers: 1+ Industry Years, 5+ Delivered Projects) -->
+            <div class="hero-metrics-grid" aria-label="Key Performance Milestones">
+                <div class="hero-metric-item">
+                    <div class="metric-number">1<span class="metric-accent">+</span></div>
+                    <div class="metric-label">Industry Years</div>
+                </div>
+                <div class="hero-metric-item">
+                    <div class="metric-number">5<span class="metric-accent">+</span></div>
+                    <div class="metric-label">Delivered Projects</div>
+                </div>
+                <div class="hero-metric-item">
+                    <div class="metric-number">40<span class="metric-accent">+</span></div>
+                    <div class="metric-label">Skills &amp; Tools</div>
+                </div>
+                <div class="hero-metric-item">
+                    <div class="metric-number">100<span class="metric-accent">%</span></div>
+                    <div class="metric-label">System Reliability</div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <section id="about" class="services">
+    <!-- Areas of Expertise Section -->
+    <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2>What I <span>Do</span></h2>
-                <div class="header-line"></div>
+                <span class="section-kicker">ENGINEERING PROFICIENCY</span>
+                <h2>Areas of <span>Expertise</span></h2>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon" aria-hidden="true">💻</div>
+                    <div class="service-card-top">
+                        <span class="service-num">01</span>
+                        <div class="service-icon-wrap" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M9 13v2"/><path d="M15 13v2"/></svg>
+                        </div>
+                    </div>
                     <div class="service-content">
-                        <h3>Website Development</h3>
-                        <p>Building responsive and performant web applications with modern frameworks and clean architecture.</p>
+                        <h3>Autonomous Multi-Agent Systems</h3>
+                        <p>Designing and deploying tool-calling agent networks, autonomous execution loops, and structured human-in-the-loop workflows.</p>
+                        <div class="service-meta">
+                            <span>LangGraph</span>
+                            <span class="meta-dot">&bull;</span>
+                            <span>Tool Calling</span>
+                            <span class="meta-dot">&bull;</span>
+                            <span>Swarm Logic</span>
+                        </div>
                     </div>
                 </div>
+
                 <div class="service-card">
-                    <div class="service-icon" aria-hidden="true">📱</div>
+                    <div class="service-card-top">
+                        <span class="service-num">02</span>
+                        <div class="service-icon-wrap" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        </div>
+                    </div>
                     <div class="service-content">
-                        <h3>App Development</h3>
-                        <p>Creating cross-platform mobile applications with native performance and intuitive user interfaces.</p>
+                        <h3>Machine Learning &amp; LLMs</h3>
+                        <p>Building performant ML inference services, RAG architectures, custom vector embeddings, and predictive classification models.</p>
+                        <div class="service-meta">
+                            <span>scikit-learn</span>
+                            <span class="meta-dot">&bull;</span>
+                            <span>RAG Pipelines</span>
+                            <span class="meta-dot">&bull;</span>
+                            <span>Vectors</span>
+                        </div>
                     </div>
                 </div>
+
                 <div class="service-card">
-                    <div class="service-icon" aria-hidden="true">🚀</div>
+                    <div class="service-card-top">
+                        <span class="service-num">03</span>
+                        <div class="service-icon-wrap" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        </div>
+                    </div>
                     <div class="service-content">
-                        <h3>Performance Optimization</h3>
-                        <p>Optimizing applications for speed, SEO, and user experience to ensure seamless interaction.</p>
+                        <h3>Production Backend Architecture</h3>
+                        <p>Architecting scalable asynchronous APIs with FastAPI, database modeling with PostgreSQL and MySQL, and robust microservices.</p>
+                        <div class="service-meta">
+                            <span>FastAPI</span>
+                            <span class="meta-dot">&bull;</span>
+                            <span>Pydantic v2</span>
+                            <span class="meta-dot">&bull;</span>
+                            <span>Async IO</span>
+                        </div>
                     </div>
                 </div>
+
                 <div class="service-card">
-                    <div class="service-icon" aria-hidden="true">🤖</div>
+                    <div class="service-card-top">
+                        <span class="service-num">04</span>
+                        <div class="service-icon-wrap" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        </div>
+                    </div>
                     <div class="service-content">
-                        <h3>AI Agents</h3>
-                        <p>Creating AI-powered automation systems that streamline business processes, reduce manual work, and improve efficiency.</p>
+                        <h3>Workflow Automation</h3>
+                        <p>Developing automated data pipelines, custom webhook integrations, and n8n workflows that eliminate operational bottlenecks.</p>
+                        <div class="service-meta">
+                            <span>n8n Flows</span>
+                            <span class="meta-dot">&bull;</span>
+                            <span>Custom Webhooks</span>
+                            <span class="meta-dot">&bull;</span>
+                            <span>ETL Logic</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="about">
-        <div class="container about-grid">
-            <div class="about-text">
-                <div class="section-header">
-                    <h2>About <span>Me</span></h2>
-                    <div class="header-line"></div>
-                </div>
-                <p>
-                    I specialize in backend development, AI-powered applications, and workflow automation. My focus is on building scalable, secure, and efficient systems that solve real-world problems.
-                </p>
+    <!-- Curiosity Lab & System Architecture (Interactive Tabs in Middle) -->
+    <section id="about" class="curiosity-section" aria-label="Curiosity and System Architecture">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-kicker">CURIOSITY &amp; EXPLORATION</span>
+                <h2>Curiosity <span>&amp; System Architecture</span></h2>
+                <p class="section-desc">Active frontiers, architectural obsessions, and technical paradigms shaping my engineering practice.</p>
+            </div>
 
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <div class="stat-value grad-red">5+</div>
-                        <div class="stat-label">Projects</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value grad-purple">Builder</div>
-                        <div class="stat-label">Mindset</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value grad-blue">Innovator</div>
-                        <div class="stat-label">Approach</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value grad-purple">Optimizer</div>
-                        <div class="stat-label">Focus</div>
-                    </div>
+            <!-- Centered Curiosity Tab Navigation Bar -->
+            <div class="curiosity-tabs-wrap">
+                <div class="curiosity-tabs-nav" role="tablist" aria-label="Curiosity Exploration Domains">
+                    <button class="curiosity-tab-btn active" role="tab" aria-selected="true" aria-controls="curiosity-panel-agents" id="tab-agents" data-tab="agents">
+                        <span class="curiosity-tab-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M9 13v2"/><path d="M15 13v2"/></svg>
+                        </span>
+                        <span class="tab-title">Autonomous Agents</span>
+                    </button>
+                    <button class="curiosity-tab-btn" role="tab" aria-selected="false" aria-controls="curiosity-panel-ml" id="tab-ml" data-tab="ml">
+                        <span class="curiosity-tab-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        </span>
+                        <span class="tab-title">Inference &amp; LLMs</span>
+                    </button>
+                    <button class="curiosity-tab-btn" role="tab" aria-selected="false" aria-controls="curiosity-panel-backend" id="tab-backend" data-tab="backend">
+                        <span class="curiosity-tab-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        </span>
+                        <span class="tab-title">Resilient Backends</span>
+                    </button>
+                    <button class="curiosity-tab-btn" role="tab" aria-selected="false" aria-controls="curiosity-panel-philosophy" id="tab-philosophy" data-tab="philosophy">
+                        <span class="curiosity-tab-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                        </span>
+                        <span class="tab-title">Engineering Mindset</span>
+                    </button>
                 </div>
             </div>
 
-            <div class="about-skills">
-                <div class="skill-section">
-                    <h3>Core Skills</h3>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Backend Development</span>
-                            <span>90%</span>
+            <!-- Tab Panels Content Container -->
+            <div class="curiosity-panels-container">
+                <!-- Panel 1: Autonomous Agents -->
+                <div class="curiosity-panel active" id="curiosity-panel-agents" role="tabpanel" aria-labelledby="tab-agents">
+                    <div class="curiosity-card">
+                        <div class="curiosity-card-header">
+                            <div class="curiosity-badge">
+                                <span class="badge-status-dot" aria-hidden="true"></span>
+                                <span>CURRENT RESEARCH &bull; MULTI-AGENT DYNAMICS</span>
+                            </div>
+                            <span class="curiosity-latency-pill">96% Autonomous Fidelity</span>
                         </div>
-                        <div class="skill-bar"><div class="skill-progress skill-progress-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" data-target="90"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>AI Agents & Automation</span>
-                            <span>85%</span>
+                        <div class="curiosity-card-body">
+                            <div class="curiosity-main-info">
+                                <h3>Self-Directed Agent Swarms &amp; Structured Tool Protocols</h3>
+                                <p>
+                                    Exploring stateful coordination patterns with LangGraph and Model Context Protocol (MCP). Moving beyond simple one-shot prompts into resilient feedback loops, dynamic planning, evaluator-corrector chains, and deterministic execution boundaries.
+                                </p>
+                                <div class="curiosity-metrics-row">
+                                    <div class="c-metric">
+                                        <span class="c-metric-val">2,375+</span>
+                                        <span class="c-metric-lbl">Tool Loops Executed</span>
+                                    </div>
+                                    <div class="c-metric">
+                                        <span class="c-metric-val">100%</span>
+                                        <span class="c-metric-lbl">Schema Validation</span>
+                                    </div>
+                                    <div class="c-metric">
+                                        <span class="c-metric-val">&lt;50ms</span>
+                                        <span class="c-metric-lbl">Dispatcher Latency</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="curiosity-visual-block">
+                                <div class="flow-preview-box">
+                                    <div class="flow-step">
+                                        <span class="step-num">01</span>
+                                        <span class="step-name">User Intent</span>
+                                    </div>
+                                    <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+                                    <div class="flow-step highlight">
+                                        <span class="step-num">02</span>
+                                        <span class="step-name">LangGraph Planner</span>
+                                    </div>
+                                    <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+                                    <div class="flow-step">
+                                        <span class="step-num">03</span>
+                                        <span class="step-name">MCP Tool Calls</span>
+                                    </div>
+                                    <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+                                    <div class="flow-step verified">
+                                        <span class="step-num">04</span>
+                                        <span class="step-name">Critic &amp; Output</span>
+                                    </div>
+                                </div>
+                                <div class="curiosity-tags-strip">
+                                    <span class="c-tag">LangGraph</span>
+                                    <span class="c-tag">MCP Protocol</span>
+                                    <span class="c-tag">Pydantic v2</span>
+                                    <span class="c-tag">Human-In-The-Loop</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="skill-bar"><div class="skill-progress skill-progress-85" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" data-target="85"></div></div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Database Design</span>
-                            <span>85%</span>
+                </div>
+
+                <!-- Panel 2: Inference & LLMs -->
+                <div class="curiosity-panel" id="curiosity-panel-ml" role="tabpanel" aria-labelledby="tab-ml">
+                    <div class="curiosity-card">
+                        <div class="curiosity-card-header">
+                            <div class="curiosity-badge">
+                                <span class="badge-status-dot" aria-hidden="true"></span>
+                                <span>RAG &amp; VECTOR PIPELINES</span>
+                            </div>
+                            <span class="curiosity-latency-pill">93% Retrieval Precision</span>
                         </div>
-                        <div class="skill-bar"><div class="skill-progress skill-progress-85" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" data-target="85"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>API Architecture</span>
-                            <span>80%</span>
+                        <div class="curiosity-card-body">
+                            <div class="curiosity-main-info">
+                                <h3>High-Precision Vector Retrieval &amp; Low-Latency Inference</h3>
+                                <p>
+                                    Investigating dense semantic embeddings, hybrid keyword-vector retrieval, and adaptive chunking strategies. Ensuring enterprise RAG applications deliver grounded citations with minimal hallucinations and optimized compute budgets.
+                                </p>
+                                <div class="curiosity-metrics-row">
+                                    <div class="c-metric">
+                                        <span class="c-metric-val">1536d</span>
+                                        <span class="c-metric-lbl">Dense Embedding Dimensions</span>
+                                    </div>
+                                    <div class="c-metric">
+                                        <span class="c-metric-val">&lt;18ms</span>
+                                        <span class="c-metric-lbl">Vector Index Query</span>
+                                    </div>
+                                    <div class="c-metric">
+                                        <span class="c-metric-val">Zero</span>
+                                        <span class="c-metric-lbl">Unverified Context Bleed</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="curiosity-visual-block">
+                                <div class="flow-preview-box">
+                                    <div class="flow-step">
+                                        <span class="step-num">01</span>
+                                        <span class="step-name">Query Token</span>
+                                    </div>
+                                    <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+                                    <div class="flow-step highlight">
+                                        <span class="step-num">02</span>
+                                        <span class="step-name">ChromaDB Hybrid</span>
+                                    </div>
+                                    <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+                                    <div class="flow-step">
+                                        <span class="step-num">03</span>
+                                        <span class="step-name">Re-Ranker Filter</span>
+                                    </div>
+                                    <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+                                    <div class="flow-step verified">
+                                        <span class="step-num">04</span>
+                                        <span class="step-name">Grounded Context</span>
+                                    </div>
+                                </div>
+                                <div class="curiosity-tags-strip">
+                                    <span class="c-tag">ChromaDB</span>
+                                    <span class="c-tag">Sentence Transformers</span>
+                                    <span class="c-tag">Hybrid Search</span>
+                                    <span class="c-tag">Token Optimization</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="skill-bar"><div class="skill-progress skill-progress-80" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" data-target="80"></div></div>
                     </div>
-                    <a href="/skills" class="skills-nav-icon" aria-label="View all skills">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                    </a>
+                </div>
+
+                <!-- Panel 3: Resilient Backends -->
+                <div class="curiosity-panel" id="curiosity-panel-backend" role="tabpanel" aria-labelledby="tab-backend">
+                    <div class="curiosity-card">
+                        <div class="curiosity-card-header">
+                            <div class="curiosity-badge">
+                                <span class="badge-status-dot" aria-hidden="true"></span>
+                                <span>DISTRIBUTED SYSTEMS &bull; ASYNC ARCHITECTURE</span>
+                            </div>
+                            <span class="curiosity-latency-pill">95% Architecture Benchmark</span>
+                        </div>
+                        <div class="curiosity-card-body">
+                            <div class="curiosity-main-info">
+                                <h3>High-Concurrency Asynchronous Pipelines &amp; Clean Architecture</h3>
+                                <p>
+                                    Building event-driven APIs that gracefully withstand bursts of upstream traffic. Utilizing asynchronous Python (FastAPI, anyio), strict Pydantic data modeling, connection pooling, and multi-stage container deployments.
+                                </p>
+                                <div class="curiosity-metrics-row">
+                                    <div class="c-metric">
+                                        <span class="c-metric-val">100%</span>
+                                        <span class="c-metric-lbl">Async Non-Blocking IO</span>
+                                    </div>
+                                    <div class="c-metric">
+                                        <span class="c-metric-val">99.9%</span>
+                                        <span class="c-metric-lbl">Service Uptime Target</span>
+                                    </div>
+                                    <div class="c-metric">
+                                        <span class="c-metric-val">Type-Safe</span>
+                                        <span class="c-metric-lbl">End-to-End Contracts</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="curiosity-visual-block">
+                                <div class="flow-preview-box">
+                                    <div class="flow-step">
+                                        <span class="step-num">01</span>
+                                        <span class="step-name">Client HTTP/WS</span>
+                                    </div>
+                                    <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+                                    <div class="flow-step highlight">
+                                        <span class="step-num">02</span>
+                                        <span class="step-name">FastAPI Router</span>
+                                    </div>
+                                    <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+                                    <div class="flow-step">
+                                        <span class="step-num">03</span>
+                                        <span class="step-name">Async Worker Pool</span>
+                                    </div>
+                                    <span class="flow-arrow" aria-hidden="true">&rarr;</span>
+                                    <div class="flow-step verified">
+                                        <span class="step-num">04</span>
+                                        <span class="step-name">Postgres / Redis</span>
+                                    </div>
+                                </div>
+                                <div class="curiosity-tags-strip">
+                                    <span class="c-tag">FastAPI</span>
+                                    <span class="c-tag">PostgreSQL</span>
+                                    <span class="c-tag">Docker</span>
+                                    <span class="c-tag">Redis Queues</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 4: Engineering Mindset -->
+                <div class="curiosity-panel" id="curiosity-panel-philosophy" role="tabpanel" aria-labelledby="tab-philosophy">
+                    <div class="curiosity-card">
+                        <div class="curiosity-card-header">
+                            <div class="curiosity-badge">
+                                <span class="badge-status-dot" aria-hidden="true"></span>
+                                <span>CORE VALUES &bull; TECHNICAL PHILOSOPHY</span>
+                            </div>
+                            <span class="curiosity-latency-pill">Authentic Engineering</span>
+                        </div>
+                        <div class="curiosity-card-body">
+                            <div class="curiosity-main-info">
+                                <h3>Pragmatic Execution, Measurable Impact &amp; Continuous Learning</h3>
+                                <p>
+                                    Code is a liability; systems are assets. My philosophy centers on building maintainable, transparent architectures where autonomous intelligence augments human decision-making without adding unnecessary fragility.
+                                </p>
+                                <div class="curiosity-metrics-row">
+                                    <div class="c-metric">
+                                        <span class="c-metric-val">5+</span>
+                                        <span class="c-metric-lbl">Delivered Projects</span>
+                                    </div>
+                                    <div class="c-metric">
+                                        <span class="c-metric-val">1+</span>
+                                        <span class="c-metric-lbl">Years Industry Focus</span>
+                                    </div>
+                                    <div class="c-metric">
+                                        <span class="c-metric-val">Zero</span>
+                                        <span class="c-metric-lbl">Vaporware Tolerated</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="curiosity-visual-block">
+                                <div class="curiosity-quote-callout">
+                                    <p class="quote-text">&ldquo;Evolving through logic and systemic execution. Grounded machine learning with production-grade engineering.&rdquo;</p>
+                                    <span class="quote-author">&mdash; Nithin Dharavathu, AI Systems Builder</span>
+                                </div>
+                                <div class="curiosity-tags-strip">
+                                    <span class="c-tag">Production Quality</span>
+                                    <span class="c-tag">Code Simplicity</span>
+                                    <span class="c-tag">Rapid Iteration</span>
+                                    <span class="c-tag">Continuous Discovery</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header text-center">
+                <span class="section-kicker">SELECTED WORK</span>
                 <h2>Featured <span>Projects</span></h2>
                 <div class="header-line center"></div>
-                <p class="section-desc">Explore some of my recent work and side projects</p>
+                <p class="section-desc">Explore autonomous systems, predictive machine learning pipelines, and production architectures</p>
                 <a href="https://github.com/Nithin-dharavath" target="_blank" rel="noopener noreferrer" class="github-link">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     View all on GitHub
@@ -185,49 +487,119 @@
                     <div class="project-main">
                         <div class="project-info">
                             <div class="project-title-group">
-                                <div class="project-icon-box" aria-hidden="true">🎮</div>
-                                <h3>Online Voting System</h3>
+                                <div class="project-icon-box" aria-hidden="true">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                </div>
+                                <div>
+                                    <span class="project-kicker">FLAGSHIP APPLICATION</span>
+                                    <h3>Online Voting System</h3>
+                                </div>
                             </div>
                             <div class="project-tags">
                                 <span class="tag">FastAPI</span>
                                 <span class="tag">Jinja2</span>
                                 <span class="tag">MySQL</span>
-                                <span class="tag">JWT</span>
+                                <span class="tag">JWT Auth</span>
                                 <span class="tag">Python</span>
                             </div>
                             <p class="project-text">
-                                A secure election management platform for educational institutions with role-based access,
-                                candidate approval workflows, one-vote enforcement, and admin-controlled result publishing.
+                                A secure, cryptographically verifiable election management platform for educational institutions with role-based JWT access, candidate approval workflows, one-vote enforcement, and admin-controlled result publishing.
                             </p>
                             <div class="project-features">
-                                <div class="feature"><span class="dot dot-green"></span> Role-based JWT authentication</div>
-                                <div class="feature"><span class="dot dot-blue"></span> Election and candidate workflows</div>
-                                <div class="feature"><span class="dot dot-purple"></span> Vote audit evidence uploads</div>
+                                <div class="feature"><span class="dot dot-green"></span> Role-based JWT authentication &amp; RBAC</div>
+                                <div class="feature"><span class="dot dot-blue"></span> Dynamic candidate approval state machine</div>
+                                <div class="feature"><span class="dot dot-purple"></span> Cryptographic audit trails &amp; evidence uploads</div>
                             </div>
                             <div class="project-actions">
-                                <a href="https://voting-system-cbr9.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Live Demo</a>
-                                <a href="https://github.com/Nithin-dharavath/Voting_System" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View Code &rarr;</a>
+                                <a href="https://voting-system-cbr9.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                    <span>Live Demo</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                                <a href="https://github.com/Nithin-dharavath/Voting_System" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                                    <span>View Code</span>
+                                    <span class="btn-arrow">&rarr;</span>
+                                </a>
                             </div>
                         </div>
-                        <div class="project-preview">
+                        <div class="project-preview terminal-window">
+                            <div class="window-chrome" aria-hidden="true">
+                                <div class="chrome-dots">
+                                    <span class="dot-red"></span>
+                                    <span class="dot-yellow"></span>
+                                    <span class="dot-green"></span>
+                                </div>
+                                <span class="chrome-title">voting_system &bull; production</span>
+                                <span class="chrome-badge">LIVE</span>
+                            </div>
                             <div class="preview-content">
                                 <img src="https://skillicons.dev/icons?i=fastapi,mysql" alt="FastAPI and MySQL logos" class="project-preview-image" loading="lazy" width="100" height="48">
-                                <span class="project-preview-caption">FastAPI + MySQL</span>
+                                <span class="project-preview-caption">FastAPI + MySQL &bull; Cryptographic RBAC</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <div class="project-preview">
+                    <div class="project-preview terminal-window">
+                        <div class="window-chrome" aria-hidden="true">
+                            <div class="chrome-dots">
+                                <span class="dot-red"></span>
+                                <span class="dot-yellow"></span>
+                                <span class="dot-green"></span>
+                            </div>
+                            <span class="chrome-title">insurance_predictor &bull; api</span>
+                            <span class="chrome-badge">LIVE</span>
+                        </div>
                         <div class="preview-content">
-                            <img src="https://skillicons.dev/icons?i=flask,sqlite" alt="Flask and SQLite logos" class="project-preview-image" loading="lazy" width="100" height="48">
-                            <span class="project-preview-caption">Flask + SQLite</span>
+                            <img src="https://skillicons.dev/icons?i=fastapi,sklearn" alt="FastAPI and scikit-learn logos" class="project-preview-image" loading="lazy" width="100" height="48">
+                            <span class="project-preview-caption">scikit-learn &bull; FastAPI &bull; Docker</span>
                         </div>
                     </div>
                     <div class="project-info">
                         <div class="project-title-group">
-                            <div class="project-icon-box small" aria-hidden="true">📺</div>
+                            <div class="project-icon-box small" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                            </div>
+                            <h3>Life Insurance Premium Predictor</h3>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">scikit-learn</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                        <p class="project-text">A high-performance machine learning inference service that predicts insurance premium risk tiers from demographic and lifestyle data using an optimized scikit-learn pipeline with Swagger docs, metrics, and Docker.</p>
+                        <div class="project-actions">
+                            <a href="https://life-insurance-prediction-ml.onrender.com/ui" target="_blank" rel="noopener noreferrer" class="btn btn-secondary small">
+                                <span>Live Demo</span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                            <a href="https://github.com/Nithin-dharavath/Life_insurance_prediction-ml" target="_blank" rel="noopener noreferrer" class="btn btn-secondary small">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-preview terminal-window">
+                        <div class="window-chrome" aria-hidden="true">
+                            <div class="chrome-dots">
+                                <span class="dot-red"></span>
+                                <span class="dot-yellow"></span>
+                                <span class="dot-green"></span>
+                            </div>
+                            <span class="chrome-title">spendly_tracker &bull; analytics</span>
+                            <span class="chrome-badge">LIVE</span>
+                        </div>
+                        <div class="preview-content">
+                            <img src="https://skillicons.dev/icons?i=flask,sqlite" alt="Flask and SQLite logos" class="project-preview-image" loading="lazy" width="100" height="48">
+                            <span class="project-preview-caption">Flask + SQLite &bull; Budget Analytics</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-title-group">
+                            <div class="project-icon-box small" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                            </div>
                             <h3>Spendly Expense Tracker</h3>
                         </div>
                         <div class="project-tags">
@@ -236,36 +608,13 @@
                             <span class="tag">Authentication</span>
                             <span class="tag">Analytics</span>
                         </div>
-                        <p class="project-text">A personal finance tracker with secure authentication, expense CRUD flows, category breakdowns, date filtering, and a dashboard focused on spending insights.</p>
+                        <p class="project-text">An intelligent personal finance dashboard featuring secure authentication, automated expense categorizations, budget analytics, and date-range filtering for spending insights.</p>
                         <div class="project-actions">
-                            <a href="https://expense-tracker-v6az.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary small">Live Demo</a>
+                            <a href="https://expense-tracker-v6az.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary small">
+                                <span>Live Demo</span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
                             <a href="https://github.com/Nithin-dharavath/expense_tracker" target="_blank" rel="noopener noreferrer" class="btn btn-secondary small">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-preview">
-                        <div class="preview-content">
-                            <img src="https://skillicons.dev/icons?i=fastapi,sklearn" alt="FastAPI and scikit-learn logos" class="project-preview-image" loading="lazy" width="100" height="48">
-                            <span class="project-preview-caption">FastAPI + scikit-learn</span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-title-group">
-                            <div class="project-icon-box small" aria-hidden="true">🛡️</div>
-                            <h3>Life Insurance Premium Predictor</h3>
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">FastAPI</span>
-                            <span class="tag">scikit-learn</span>
-                            <span class="tag">Pydantic</span>
-                            <span class="tag">Machine Learning</span>
-                        </div>
-                        <p class="project-text">A FastAPI ML service that predicts insurance premium categories (High/Medium/Low) from demographic and lifestyle data using a scikit-learn pipeline, with a web UI, health/metrics endpoints, and Docker support.</p>
-                        <div class="project-actions">
-                            <a href="https://life-insurance-prediction-ml.onrender.com/ui" target="_blank" rel="noopener noreferrer" class="btn btn-secondary small">Live Demo</a>
-                            <a href="https://github.com/Nithin-dharavath/Life_insurance_prediction-ml" target="_blank" rel="noopener noreferrer" class="btn btn-secondary small">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -273,36 +622,59 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container contact-grid">
             <div class="contact-info">
                 <div class="section-header">
-                    <h2>Have a project?</h2>
-                    <h3>Let's <span>talk!</span></h3>
+                    <span class="section-kicker">GET IN TOUCH</span>
+                    <h2>Have a project in mind?</h2>
+                    <h3>Let's <span>collaborate!</span></h3>
                     <div class="header-line"></div>
                 </div>
                 <p class="contact-desc">
-                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-                    Let's create something amazing together!
+                    I'm open to discussing autonomous AI agents, machine learning pipelines, scalable backend engineering, and high-impact freelance opportunities. Let's create something extraordinary together!
                 </p>
                 <div class="contact-details">
                     <div class="detail-item">
-                        <div class="detail-icon" aria-hidden="true">📧</div>
+                        <div class="detail-icon-wrap" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
                         <div class="detail-text">
                             <span class="label">Email</span>
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nithindharavath01@gmail.com" target="_blank" class="value">nithindharavath01@gmail.com</a>
+                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nithindharavath01@gmail.com" target="_blank" rel="noopener noreferrer" class="value">nithindharavath01@gmail.com</a>
                         </div>
                     </div>
                     <div class="detail-item">
-                        <div class="detail-icon" aria-hidden="true">📍</div>
+                        <div class="detail-icon-wrap" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
                         <div class="detail-text">
                             <span class="label">Location</span>
                             <span class="value">India, Hyderabad</span>
                         </div>
                     </div>
+                    <div class="detail-item status-item">
+                        <div class="detail-icon-wrap status-icon-wrap" aria-hidden="true">
+                            <span class="radar-dot active"></span>
+                        </div>
+                        <div class="detail-text">
+                            <span class="label">Status</span>
+                            <span class="value status-highlight">Available for AI Engineering &amp; Freelance</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="contact-form-container">
+                <div class="form-window-chrome" aria-hidden="true">
+                    <div class="chrome-dots">
+                        <span class="dot-red"></span>
+                        <span class="dot-yellow"></span>
+                        <span class="dot-green"></span>
+                    </div>
+                    <span class="chrome-title">terminal &bull; inquiry_channel</span>
+                    <span class="form-ready-pill">READY</span>
+                </div>
                 <form class="contact-form" action="/api/contact" method="post" novalidate>
                     <div class="form-group">
                         <label for="name">Full Name</label>
@@ -314,13 +686,16 @@
                     </div>
                     <div class="form-group">
                         <label for="subject">Subject</label>
-                        <input type="text" name="subject" id="subject" placeholder="Project Inquiry" required>
+                        <input type="text" name="subject" id="subject" placeholder="AI Project Inquiry" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea rows="5" name="message" id="message" placeholder="Tell me about your project..." required></textarea>
+                        <textarea rows="5" name="message" id="message" placeholder="Tell me about your project, system requirements, or ideas..." required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary full-width">Send Message</button>
+                    <button type="submit" class="btn btn-primary btn-submit full-width">
+                        <span>Send Message</span>
+                        <span class="btn-arrow">&rarr;</span>
+                    </button>
                 </form>
             </div>
         </div>

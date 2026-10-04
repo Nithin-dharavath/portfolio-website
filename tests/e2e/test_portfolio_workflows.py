@@ -4,8 +4,20 @@ class TestPortfolioBrowsing:
         assert resp.status_code == 200
         text = resp.text
         assert "Nithin Dharavath" in text
-        assert "Backend Developer" in text or "Freelancer" in text
+        assert "AI Engineer" in text or "Backend Developer" in text or "Freelancer" in text
         assert "Contact" in text
+
+    async def test_homepage_hero_welcome_and_navigation(self, client):
+        resp = await client.get("/")
+        assert resp.status_code == 200
+        text = resp.text
+        assert "About Nithin" not in text
+        assert "An independent engineering practice focused on the intersection" not in text
+        assert "Welcome to my Portfolio" in text
+        assert "hero-welcome-wrap" in text
+        assert "hero-welcome-title" in text
+        assert 'id="primary-nav"' in text
+        assert 'aria-controls="primary-nav"' in text
 
     async def test_visit_skills_page(self, client):
         resp = await client.get("/skills")

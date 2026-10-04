@@ -25,6 +25,16 @@ class TestStaticFiles:
         response = await client.get("/static/js/skills.js")
         assert response.status_code == 200
 
+    async def test_js_three_served(self, client):
+        response = await client.get("/static/js/three.min.js")
+        assert response.status_code == 200
+        assert "javascript" in response.headers["content-type"]
+
+    async def test_js_three_scene_served(self, client):
+        response = await client.get("/static/js/three-scene.js")
+        assert response.status_code == 200
+        assert "javascript" in response.headers["content-type"]
+
     async def test_pdf_resume_served(self, client):
         response = await client.get("/static/resume/nithin-resume.pdf")
         assert response.status_code == 200

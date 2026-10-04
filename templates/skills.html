@@ -1,248 +1,843 @@
 {% extends "base.html" %}
 {% set active_page = "skills" %}
 
-{% block title %}Skills | Nithin Dharavath{% endblock %}
-{% block og_title %}Skills | Nithin Dharavath{% endblock %}
-{% block twitter_title %}Skills | Nithin Dharavath{% endblock %}
-{% block description %}Technical skills and expertise of Nithin Dharavath - Backend Developer, Freelancer and AI Agent Builder.{% endblock %}
-{% block og_description %}Technical skills and expertise of Nithin Dharavath - Backend Developer, Freelancer and AI Agent Builder.{% endblock %}
-{% block twitter_description %}Technical skills and expertise of Nithin Dharavath - Backend Developer, Freelancer and AI Agent Builder.{% endblock %}
+{% block title %}Skills &amp; Capabilities | Nithin Dharavath - AI Engineer{% endblock %}
+{% block og_title %}Skills &amp; Capabilities | Nithin Dharavath - AI Engineer{% endblock %}
+{% block twitter_title %}Skills &amp; Capabilities | Nithin Dharavath - AI Engineer{% endblock %}
+{% block description %}Comprehensive technical capabilities, autonomous agent systems, ML pipelines, and production backend architecture engineered by Nithin Dharavath.{% endblock %}
+{% block og_description %}Comprehensive technical capabilities, autonomous agent systems, ML pipelines, and production backend architecture engineered by Nithin Dharavath.{% endblock %}
+{% block twitter_description %}Comprehensive technical capabilities, autonomous agent systems, ML pipelines, and production backend architecture engineered by Nithin Dharavath.{% endblock %}
 {% block extra_css %}<link rel="stylesheet" href="/static/css/skills.css">{% endblock %}
 
 {% block content %}
-    <main class="skills-page">
-        <div class="container">
-            <div class="skills-header section-header">
-                <div class="skills-breadcrumb">
-                    <a href="/">Home</a> / <span>Skills</span>
+<main class="skills-page">
+    <div class="container">
+        <!-- Editorial Header Section -->
+        <header class="skills-editorial-header">
+            <div class="skills-kicker">
+                <span class="kicker-badge">SYSTEM CAPABILITIES</span>
+                <span class="kicker-path">Nithin Dharavathu / Architecture &amp; Stack</span>
+            </div>
+            
+            <h1 class="skills-hero-title">Technical Mastery &amp; <br><span class="highlight-text">Intelligence Stack</span></h1>
+            
+            <p class="skills-hero-subtitle">
+                Comprehensive analytics, competency progression, and domain breakdown across autonomous agent networks, production machine learning inference pipelines, high-throughput backends, and cloud infrastructure.
+            </p>
+        </header>
+
+        <!-- Skills Analytics & Architecture Dashboard (Matching Reference Layout) -->
+        <section class="skills-dashboard-card" aria-label="Skills &amp; Intelligence Dashboard">
+            <!-- Left & Center Main Analytics Column -->
+            <div class="dash-main-col">
+                <!-- Top Row: Summary KPIs + Progression Bar Chart -->
+                <div class="dash-top-row">
+                    <!-- Top Left KPI Stats (Authentic: 5 Delivered Projects, 1+ Years Industry Experience) -->
+                    <div class="dash-kpi-block">
+                        <div class="dash-kpi-item">
+                            <span class="dash-kpi-label">Delivered Projects:</span>
+                            <span class="dash-kpi-value">5 Projects</span>
+                        </div>
+                        <div class="dash-kpi-item">
+                            <span class="dash-kpi-label">Industry Experience:</span>
+                            <span class="dash-kpi-value">1+ Years</span>
+                            <div class="dash-kpi-underline" aria-hidden="true"></div>
+                        </div>
+                    </div>
+
+                    <!-- Top Center/Right Bar Chart -->
+                    <div class="dash-barchart-block">
+                        <h3 class="dash-block-title">Competency Progression &amp; Core Capabilities</h3>
+                        <div class="barchart-container">
+                            <!-- Y-Axis Grid Lines -->
+                            <div class="barchart-grid" aria-hidden="true">
+                                <div class="grid-line" data-level="100%"><span>100%</span></div>
+                                <div class="grid-line" data-level="75%"><span>75%</span></div>
+                                <div class="grid-line" data-level="50%"><span>50%</span></div>
+                                <div class="grid-line" data-level="25%"><span>25%</span></div>
+                                <div class="grid-line" data-level="0%"><span>0%</span></div>
+                            </div>
+                            <!-- Bars Columns with Permanent Percentage Badges -->
+                            <div class="barchart-bars">
+                                <div class="bar-col" data-pct="96%">
+                                    <span class="bar-pct-badge">96%</span>
+                                    <div class="bar-track">
+                                        <div class="bar-fill" style="height: 96%;" data-height="96%" title="Autonomous Agents: 96%"></div>
+                                    </div>
+                                    <span class="bar-label">Agents</span>
+                                </div>
+                                <div class="bar-col" data-pct="93%">
+                                    <span class="bar-pct-badge">93%</span>
+                                    <div class="bar-track">
+                                        <div class="bar-fill" style="height: 93%;" data-height="93%" title="ML &amp; LLMs: 93%"></div>
+                                    </div>
+                                    <span class="bar-label">LLMs</span>
+                                </div>
+                                <div class="bar-col" data-pct="95%">
+                                    <span class="bar-pct-badge">95%</span>
+                                    <div class="bar-track">
+                                        <div class="bar-fill" style="height: 95%;" data-height="95%" title="Backend Architecture: 95%"></div>
+                                    </div>
+                                    <span class="bar-label">Backend</span>
+                                </div>
+                                <div class="bar-col" data-pct="92%">
+                                    <span class="bar-pct-badge">92%</span>
+                                    <div class="bar-track">
+                                        <div class="bar-fill" style="height: 92%;" data-height="92%" title="Data &amp; Vectors: 92%"></div>
+                                    </div>
+                                    <span class="bar-label">Vectors</span>
+                                </div>
+                                <div class="bar-col" data-pct="90%">
+                                    <span class="bar-pct-badge">90%</span>
+                                    <div class="bar-track">
+                                        <div class="bar-fill" style="height: 90%;" data-height="90%" title="Cloud &amp; DevOps: 90%"></div>
+                                    </div>
+                                    <span class="bar-label">DevOps</span>
+                                </div>
+                                <div class="bar-col" data-pct="96%">
+                                    <span class="bar-pct-badge">96%</span>
+                                    <div class="bar-track">
+                                        <div class="bar-fill" style="height: 96%;" data-height="96%" title="Workflow Automation: 96%"></div>
+                                    </div>
+                                    <span class="bar-label">Auto</span>
+                                </div>
+                                <div class="bar-col" data-pct="98%">
+                                    <span class="bar-pct-badge">98%</span>
+                                    <div class="bar-track">
+                                        <div class="bar-fill" style="height: 98%;" data-height="98%" title="Protocols &amp; MCP: 98%"></div>
+                                    </div>
+                                    <span class="bar-label">MCP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h1>My <span>Skills</span></h1>
-                <div class="header-line"></div>
-                <p class="section-desc">Technologies, tools and mindsets I work with daily</p>
+
+                <!-- Bottom Row: Donut Chart + Horizontal Progress Bars -->
+                <div class="dash-bottom-row">
+                    <!-- Donut Chart Block -->
+                    <div class="dash-donut-block">
+                        <h3 class="dash-block-title">Architecture Specialization Breakdown</h3>
+                        <div class="donut-chart-wrapper">
+                            <div class="donut-callout callout-left">
+                                <span class="donut-pct">52%</span>
+                                <span class="donut-label">Autonomous Multi-Agent Networks</span>
+                            </div>
+
+                            <div class="donut-svg-center">
+                                <svg width="150" height="150" viewBox="0 0 160 160" class="donut-svg" aria-hidden="true">
+                                    <circle cx="80" cy="80" r="62" fill="none" stroke="rgba(255, 255, 255, 0.08)" stroke-width="16" />
+                                    <!-- Segment 1: Agents 52% (dasharray 202 of 390) -->
+                                    <circle cx="80" cy="80" r="62" fill="none" stroke="url(#dashCoralGrad)" stroke-width="16"
+                                            stroke-dasharray="202 188" stroke-dashoffset="0" stroke-linecap="round" />
+                                    <!-- Segment 2: Backend 24% (dasharray 93 of 390) -->
+                                    <circle cx="80" cy="80" r="62" fill="none" stroke="#64748b" stroke-width="16"
+                                            stroke-dasharray="93 297" stroke-dashoffset="-210" stroke-linecap="round" />
+                                    <!-- Segment 3: ML 18% (dasharray 70 of 390) -->
+                                    <circle cx="80" cy="80" r="62" fill="none" stroke="#334155" stroke-width="16"
+                                            stroke-dasharray="70 320" stroke-dashoffset="-310" stroke-linecap="round" />
+                                    <defs>
+                                        <linearGradient id="dashCoralGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#f97316"/>
+                                            <stop offset="100%" stop-color="#dc2626"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <!-- Center Spark/Flame Icon (Matching Reference) -->
+                                <div class="donut-center-icon" aria-hidden="true">
+                                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 2C9.5 6 7 8.5 7 13C7 16.31 9.69 19 13 19C15.5 19 17.65 17.43 18.5 15.19C18.82 14.33 18.5 13.38 17.81 12.87C16.89 12.21 16 11 16 9.5C16 8 16.5 6.5 17 5C14.5 5.5 13.5 3.5 12 2Z" fill="url(#dashCoralGrad)"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <div class="donut-callouts-right">
+                                <div class="donut-callout">
+                                    <span class="donut-pct">23.6%</span>
+                                    <span class="donut-label">Production Backend &amp; APIs</span>
+                                </div>
+                                <div class="donut-callout">
+                                    <span class="donut-pct">18.3%</span>
+                                    <span class="donut-label">Machine Learning &amp; RAG</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Horizontal Progress Breakdown -->
+                    <div class="dash-bars-block">
+                        <h3 class="dash-block-title">Key Technology Stack Breakdown</h3>
+                        <div class="dash-meters-list">
+                            <div class="dash-meter-row">
+                                <div class="dash-meter-header">
+                                    <span class="dash-meter-name">LangGraph &amp; Multi-Agent Swarms</span>
+                                    <span class="dash-meter-num">96%</span>
+                                </div>
+                                <div class="dash-meter-track">
+                                    <div class="dash-meter-fill coral-grad" style="width: 96%;"></div>
+                                </div>
+                            </div>
+                            <div class="dash-meter-row">
+                                <div class="dash-meter-header">
+                                    <span class="dash-meter-name">FastAPI Asynchronous Backends</span>
+                                    <span class="dash-meter-num">95%</span>
+                                </div>
+                                <div class="dash-meter-track">
+                                    <div class="dash-meter-fill orange-grad" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div class="dash-meter-row">
+                                <div class="dash-meter-header">
+                                    <span class="dash-meter-name">ChromaDB &amp; Vector Embeddings</span>
+                                    <span class="dash-meter-num">92%</span>
+                                </div>
+                                <div class="dash-meter-track">
+                                    <div class="dash-meter-fill amber-grad" style="width: 92%;"></div>
+                                </div>
+                            </div>
+                            <div class="dash-meter-row">
+                                <div class="dash-meter-header">
+                                    <span class="dash-meter-name">Docker Multi-Stage &amp; Cloud CI/CD</span>
+                                    <span class="dash-meter-num">90%</span>
+                                </div>
+                                <div class="dash-meter-track">
+                                    <div class="dash-meter-fill slate-grad" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="skills-summary">
-                <div class="summary-stat">
-                    <div class="summary-stat-value">40+</div>
-                    <div class="summary-stat-label">Skills &amp; Tools</div>
+            <!-- Right Column: Vertical KPI Rail (Authentic Profile Metrics) -->
+            <aside class="dash-sidebar-col" aria-label="System Runtime Metrics">
+                <div class="sidebar-stat-item">
+                    <div class="stat-icon-wrap" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f04438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number">1+</span>
+                        <span class="stat-desc">Years Industry Experience</span>
+                    </div>
                 </div>
-                <div class="summary-stat">
-                    <div class="summary-stat-value">9</div>
-                    <div class="summary-stat-label">Categories</div>
+
+                <div class="sidebar-stat-item">
+                    <div class="stat-icon-wrap" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f04438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number">5</span>
+                        <span class="stat-desc">Production Projects Delivered</span>
+                    </div>
                 </div>
-                <div class="summary-stat">
-                    <div class="summary-stat-value">2+</div>
-                    <div class="summary-stat-label">Years Building</div>
+
+                <div class="sidebar-stat-item">
+                    <div class="stat-icon-wrap" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f04438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number">40+</span>
+                        <span class="stat-desc">Production Libraries &amp; Tools</span>
+                    </div>
                 </div>
-                <div class="summary-stat">
-                    <div class="summary-stat-value">5+</div>
-                    <div class="summary-stat-label">Projects Shipped</div>
+
+                <div class="sidebar-stat-item">
+                    <div class="stat-icon-wrap" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f04438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-desc">Type-Safe &amp; Asynchronous Quality</span>
+                    </div>
                 </div>
+
+                <div class="sidebar-stat-item">
+                    <div class="stat-icon-wrap" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f04438" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-number">99.9%</span>
+                        <span class="stat-desc">System Uptime &amp; Reliability</span>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <!-- Dedicated Domain Explorer Section (Shows All Skills Deeply) -->
+        <section class="skills-deepdive-section">
+            <div class="deepdive-header">
+                <span class="deepdive-kicker">TECHNICAL STACK EXPLORER</span>
+                <h2 class="deepdive-title">Detailed Capability Specifications</h2>
+                <p class="deepdive-subtitle">Inspect stateful architectures, runtime dependencies, and static proficiency evaluations by specialization.</p>
             </div>
 
-            <div class="skills-grid">
-                <article class="skill-card" data-color="amber" data-delay="0">
-                    <div class="card-accent"></div>
-                    <div class="card-body">
-                        <div class="card-header">
-                            <div class="card-icon amber">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                            </div>
-                            <div class="card-title-group">
-                                <span class="card-number amber">01</span>
-                                <h3>Languages &amp; Markup</h3>
-                            </div>
-                        </div>
-                        <div class="card-skills">
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>Python</span>
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>HTML5</span>
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>CSS</span>
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>JavaScript</span>
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>YAML</span>
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>Markdown</span>
-                        </div>
-                    </div>
-                </article>
+            <!-- Dynamic Category Filter Toolbar (Individual Category Views) -->
+            <nav class="skills-filter-nav" aria-label="Skill Category Filters">
+                <button type="button" class="filter-btn active" data-category="agents">
+                    <span class="btn-dot" aria-hidden="true"></span>
+                    <span>Autonomous Agents</span>
+                </button>
+                <button type="button" class="filter-btn" data-category="ml">
+                    <span>Machine Learning &amp; LLMs</span>
+                </button>
+                <button type="button" class="filter-btn" data-category="backend">
+                    <span>Backend &amp; Systems</span>
+                </button>
+                <button type="button" class="filter-btn" data-category="data">
+                    <span>Data &amp; Vectors</span>
+                </button>
+                <button type="button" class="filter-btn" data-category="cloud">
+                    <span>Cloud &amp; DevOps</span>
+                </button>
+                <button type="button" class="filter-btn" data-category="automation">
+                    <span>Automation</span>
+                </button>
+            </nav>
+        </section>
 
-                <article class="skill-card" data-color="blue" data-delay="100">
-                    <div class="card-accent"></div>
-                    <div class="card-body">
-                        <div class="card-header">
-                            <div class="card-icon blue">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                            </div>
-                            <div class="card-title-group">
-                                <span class="card-number blue">02</span>
-                                <h3>Frontend Skills</h3>
-                            </div>
-                        </div>
-                        <div class="card-skills">
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>Vanilla JS</span>
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>Responsive Design</span>
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>DOM Manipulation</span>
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>Fetch API &amp; AJAX</span>
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>CSS Grid &amp; Flexbox</span>
-                            <span class="skill-tag"><span class="skill-dot familiar" aria-hidden="true"></span>Browser DevTools</span>
-                        </div>
+        <!-- Bento Grid Layout: Each Card Features a Side-by-Side Static Percentage Display -->
+        <div class="skills-bento-grid">
+            
+            <!-- 01: Autonomous Multi-Agent Networks -->
+            <article class="bento-card bento-split-card" data-category="agents">
+                <div class="card-left-col">
+                    <div class="bento-badge-row">
+                        <span class="bento-num">01</span>
+                        <span class="bento-tag red-tag">CORE SPECIALIZATION</span>
                     </div>
-                </article>
+                    <div class="bento-header">
+                        <h2>Autonomous Multi-Agent Networks</h2>
+                        <p class="bento-summary">
+                            Designing stateful, multi-turn agent systems with structured tool calling, dynamic planner-evaluator feedback loops, and deterministic execution boundaries.
+                        </p>
+                    </div>
 
-                <article class="skill-card" data-color="emerald" data-delay="200">
-                    <div class="card-accent"></div>
-                    <div class="card-body">
-                        <div class="card-header">
-                            <div class="card-icon emerald">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-                            </div>
-                            <div class="card-title-group">
-                                <span class="card-number emerald">03</span>
-                                <h3>Backend &amp; Frameworks</h3>
-                            </div>
-                        </div>
-                        <div class="card-skills">
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>FastAPI</span>
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>Django</span>
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>Pydantic</span>
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>REST APIs</span>
-                        </div>
+                    <!-- Visual Agent Pipeline Diagram -->
+                    <div class="agent-pipeline-visual" aria-hidden="true">
+                        <div class="pipeline-step"><span class="step-icon">🎯</span> Goal Planner</div>
+                        <div class="pipeline-arrow">&rarr;</div>
+                        <div class="pipeline-step"><span class="step-icon">⚡</span> Tool Execution (MCP)</div>
+                        <div class="pipeline-arrow">&rarr;</div>
+                        <div class="pipeline-step"><span class="step-icon">🔍</span> Critic &amp; Self-Correction</div>
+                        <div class="pipeline-arrow">&rarr;</div>
+                        <div class="pipeline-step"><span class="step-icon">✨</span> Output</div>
                     </div>
-                </article>
 
-                <article class="skill-card" data-color="pink" data-delay="300">
-                    <div class="card-accent"></div>
-                    <div class="card-body">
-                        <div class="card-header">
-                            <div class="card-icon pink">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-                            </div>
-                            <div class="card-title-group">
-                                <span class="card-number pink">04</span>
-                                <h3>Databases</h3>
-                            </div>
-                        </div>
-                        <div class="card-skills">
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>MySQL</span>
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>SQLite</span>
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>Database Design</span>
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>Query Optimization</span>
-                        </div>
+                    <div class="bento-skills-list">
+                        <span class="skill-chip active"><span class="chip-dot"></span>LangChain</span>
+                        <span class="skill-chip active"><span class="chip-dot"></span>LangGraph</span>
+                        <span class="skill-chip active"><span class="chip-dot"></span>Tool Calling Architecture</span>
+                        <span class="skill-chip active"><span class="chip-dot"></span>Multi-Agent Swarms</span>
+                        <span class="skill-chip active"><span class="chip-dot"></span>MCP Server Integration</span>
+                        <span class="skill-chip active"><span class="chip-dot"></span>Agent Memory &amp; State</span>
+                        <span class="skill-chip active"><span class="chip-dot"></span>Human-in-the-Loop Loops</span>
                     </div>
-                </article>
+                </div>
 
-                <article class="skill-card" data-color="purple" data-delay="400">
-                    <div class="card-accent"></div>
-                    <div class="card-body">
-                        <div class="card-header">
-                            <div class="card-icon purple">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                            </div>
-                            <div class="card-title-group">
-                                <span class="card-number purple">05</span>
-                                <h3>DevOps &amp; Cloud</h3>
-                            </div>
+                <!-- Right Column: Static Proficiency Percentage Display -->
+                <div class="card-right-col">
+                    <div class="proficiency-panel">
+                        <div class="proficiency-panel-header">
+                            <span class="panel-kicker">PROFICIENCY METRICS</span>
+                            <span class="panel-badge">PRODUCTION</span>
                         </div>
-                        <div class="card-skills">
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>Git &amp; GitHub</span>
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>Docker</span>
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>CI/CD</span>
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>Railway</span>
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>AWS EC2</span>
-                            <span class="skill-tag"><span class="skill-dot familiar" aria-hidden="true"></span>AWS S3</span>
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>n8n</span>
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>Deployment</span>
+                        <div class="proficiency-meters-list">
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">LangGraph &amp; LangChain</span>
+                                    <span class="meter-percent">96%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 96%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">Tool Calling &amp; Sandboxing</span>
+                                    <span class="meter-percent">94%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 94%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">Multi-Agent Swarm Logic</span>
+                                    <span class="meter-percent">92%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 92%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">MCP Server Integration</span>
+                                    <span class="meter-percent">90%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">Stateful Memory &amp; History</span>
+                                    <span class="meter-percent">88%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 88%;"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="skill-card" data-color="teal" data-delay="500">
-                    <div class="card-accent"></div>
-                    <div class="card-body">
-                        <div class="card-header">
-                            <div class="card-icon teal">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                            </div>
-                            <div class="card-title-group">
-                                <span class="card-number teal">06</span>
-                                <h3>AI &amp; Agentic</h3>
-                            </div>
-                        </div>
-                        <div class="card-skills">
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>Agentic Coding</span>
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>Vibe Coding</span>
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>Specs &amp; Prompts</span>
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>MCPs &amp; Tools</span>
-                        </div>
+            <!-- 02: Machine Learning & LLM Pipelines -->
+            <article class="bento-card bento-split-card is-hidden" data-category="ml">
+                <div class="card-left-col">
+                    <div class="bento-badge-row">
+                        <span class="bento-num">02</span>
+                        <span class="bento-tag">PREDICTIVE &amp; GENERATIVE</span>
                     </div>
-                </article>
+                    <div class="bento-header">
+                        <h2>Machine Learning &amp; LLMs</h2>
+                        <p class="bento-summary">
+                            Production inference services, scikit-learn predictive modeling, vector retrieval (RAG), and prompt engineering for enterprise automation.
+                        </p>
+                    </div>
+                    <div class="bento-skills-list">
+                        <span class="skill-chip"><span class="chip-dot"></span>scikit-learn</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>PyTorch</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>RAG Pipelines</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>Vector Embeddings</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>Semantic Search</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>Model Benchmarking</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>Prompt Optimization</span>
+                    </div>
+                </div>
 
-                <article class="skill-card" data-color="rose" data-delay="600">
-                    <div class="card-accent"></div>
-                    <div class="card-body">
-                        <div class="card-header">
-                            <div class="card-icon rose">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                            </div>
-                            <div class="card-title-group">
-                                <span class="card-number rose">07</span>
-                                <h3>Plugins</h3>
-                            </div>
+                <!-- Right Column: Static Proficiency Percentage Display -->
+                <div class="card-right-col">
+                    <div class="proficiency-panel">
+                        <div class="proficiency-panel-header">
+                            <span class="panel-kicker">PROFICIENCY METRICS</span>
+                            <span class="panel-badge">EVALUATED</span>
                         </div>
-                        <div class="card-skills">
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>Custom Plugins</span>
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>n8n Nodes</span>
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>API Integrations</span>
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>Middleware</span>
-                            <span class="skill-tag"><span class="skill-dot familiar" aria-hidden="true"></span>Extensions</span>
+                        <div class="proficiency-meters-list">
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">RAG Pipelines &amp; Retrieval</span>
+                                    <span class="meter-percent">95%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">scikit-learn Pipelines</span>
+                                    <span class="meter-percent">93%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 93%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">Vector Embeddings &amp; Indexing</span>
+                                    <span class="meter-percent">92%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 92%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">PyTorch Inference Services</span>
+                                    <span class="meter-percent">90%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">Prompt Architecture &amp; Evals</span>
+                                    <span class="meter-percent">89%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 89%;"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="skill-card" data-color="indigo" data-delay="700">
-                    <div class="card-accent"></div>
-                    <div class="card-body">
-                        <div class="card-header">
-                            <div class="card-icon indigo">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-                            </div>
-                            <div class="card-title-group">
-                                <span class="card-number indigo">08</span>
-                                <h3>System &amp; Design</h3>
-                            </div>
-                        </div>
-                        <div class="card-skills">
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>System Design</span>
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>HLD / LLD</span>
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>Feature Design</span>
-                            <span class="skill-tag"><span class="skill-dot proficient" aria-hidden="true"></span>Architecture</span>
-                        </div>
+            <!-- 03: High-Throughput Production Backend -->
+            <article class="bento-card bento-split-card is-hidden" data-category="backend">
+                <div class="card-left-col">
+                    <div class="bento-badge-row">
+                        <span class="bento-num">03</span>
+                        <span class="bento-tag">PRODUCTION SYSTEMS</span>
                     </div>
-                </article>
+                    <div class="bento-header">
+                        <h2>Production Backend Architecture</h2>
+                        <p class="bento-summary">
+                            Asynchronous microservices, strict type validation, rate limiting, and resilient API architectures built for scale and zero downtime.
+                        </p>
+                    </div>
+                    <div class="bento-skills-list">
+                        <span class="skill-chip"><span class="chip-dot"></span>FastAPI</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>Django</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>Python</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>Pydantic v2</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>Asynchronous IO</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>RESTful APIs</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>Token Bucket Rate Limiting</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>JWT Authentication</span>
+                    </div>
+                </div>
 
-                <article class="skill-card" data-color="orange" data-delay="800">
-                    <div class="card-accent"></div>
-                    <div class="card-body">
-                        <div class="card-header">
-                            <div class="card-icon orange">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-                            </div>
-                            <div class="card-title-group">
-                                <span class="card-number orange">09</span>
-                                <h3>Mindset &amp; Growth</h3>
-                            </div>
+                <!-- Right Column: Static Proficiency Percentage Display -->
+                <div class="card-right-col">
+                    <div class="proficiency-panel">
+                        <div class="proficiency-panel-header">
+                            <span class="panel-kicker">PROFICIENCY METRICS</span>
+                            <span class="panel-badge">OPTIMIZED</span>
                         </div>
-                        <div class="card-skills">
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>Research</span>
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>Creativity</span>
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>Time Management</span>
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>Curiosity</span>
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>Self Improvement</span>
-                            <span class="skill-tag"><span class="skill-dot expert" aria-hidden="true"></span>Learn from Mistakes</span>
+                        <div class="proficiency-meters-list">
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">FastAPI Framework</span>
+                                    <span class="meter-percent">98%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 98%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">Python 3.11+ Core &amp; Async</span>
+                                    <span class="meter-percent">96%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 96%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">Pydantic v2 Validation</span>
+                                    <span class="meter-percent">95%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">RESTful Microservices</span>
+                                    <span class="meter-percent">94%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 94%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">Rate Limiting &amp; Security</span>
+                                    <span class="meter-percent">92%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 92%;"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </article>
-            </div>
+                </div>
+            </article>
+
+            <!-- 04: Data Stores & Vector Engines -->
+            <article class="bento-card bento-split-card is-hidden" data-category="data">
+                <div class="card-left-col">
+                    <div class="bento-badge-row">
+                        <span class="bento-num">04</span>
+                        <span class="bento-tag">STORAGE &amp; RETRIEVAL</span>
+                    </div>
+                    <div class="bento-header">
+                        <h2>Databases &amp; Vector Stores</h2>
+                        <p class="bento-summary">
+                            Relational schema design, transactional integrity, low-latency caching, and vector indexing for high-dimensional semantic search.
+                        </p>
+                    </div>
+                    <div class="bento-skills-list">
+                        <span class="skill-chip"><span class="chip-dot"></span>PostgreSQL</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>MySQL</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>SQLite</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>ChromaDB &amp; Vector Stores</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>SQLAlchemy ORM</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>Redis Caching</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>Relational Schema Modeling</span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Static Proficiency Percentage Display -->
+                <div class="card-right-col">
+                    <div class="proficiency-panel">
+                        <div class="proficiency-panel-header">
+                            <span class="panel-kicker">PROFICIENCY METRICS</span>
+                            <span class="panel-badge">SCALABLE</span>
+                        </div>
+                        <div class="proficiency-meters-list">
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">PostgreSQL &amp; Schema Design</span>
+                                    <span class="meter-percent">94%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 94%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">SQLAlchemy ORM &amp; Migrations</span>
+                                    <span class="meter-percent">93%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 93%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">ChromaDB &amp; Vector Stores</span>
+                                    <span class="meter-percent">91%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 91%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">MySQL Data Reliability</span>
+                                    <span class="meter-percent">90%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">Redis Caching &amp; Queues</span>
+                                    <span class="meter-percent">89%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 89%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 05: Cloud & DevOps Infrastructure -->
+            <article class="bento-card bento-split-card is-hidden" data-category="cloud">
+                <div class="card-left-col">
+                    <div class="bento-badge-row">
+                        <span class="bento-num">05</span>
+                        <span class="bento-tag">CONTAINERS &amp; DEPLOYMENT</span>
+                    </div>
+                    <div class="bento-header">
+                        <h2>Cloud &amp; DevOps</h2>
+                        <p class="bento-summary">
+                            Dockerized multi-stage container builds, automated GitHub Actions CI/CD pipelines, and cloud hosting with automated rollback safety.
+                        </p>
+                    </div>
+                    <div class="bento-skills-list">
+                        <span class="skill-chip"><span class="chip-dot"></span>Docker</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>Git &amp; GitHub</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>CI/CD GitHub Actions</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>Render &amp; Railway Deployment</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>AWS EC2 &amp; S3</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>Linux Environments</span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Static Proficiency Percentage Display -->
+                <div class="card-right-col">
+                    <div class="proficiency-panel">
+                        <div class="proficiency-panel-header">
+                            <span class="panel-kicker">PROFICIENCY METRICS</span>
+                            <span class="panel-badge">DEPLOYED</span>
+                        </div>
+                        <div class="proficiency-meters-list">
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">Docker Multi-Stage Builds</span>
+                                    <span class="meter-percent">94%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 94%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">Render &amp; Cloud Deployments</span>
+                                    <span class="meter-percent">93%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 93%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">GitHub Actions CI/CD</span>
+                                    <span class="meter-percent">92%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 92%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">Linux System Environments</span>
+                                    <span class="meter-percent">90%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">AWS EC2 &amp; S3 Integration</span>
+                                    <span class="meter-percent">86%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 86%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 06: Workflow Automation & Integrations -->
+            <article class="bento-card bento-split-card is-hidden" data-category="automation">
+                <div class="card-left-col">
+                    <div class="bento-badge-row">
+                        <span class="bento-num">06</span>
+                        <span class="bento-tag">ORCHESTRATION</span>
+                    </div>
+                    <div class="bento-header">
+                        <h2>Workflow &amp; Tool Automation</h2>
+                        <p class="bento-summary">
+                            End-to-end automation pipelines, n8n orchestrations, webhook relays, and programmatic data extraction routines that eliminate operational drag.
+                        </p>
+                    </div>
+                    <div class="bento-skills-list">
+                        <span class="skill-chip"><span class="chip-dot"></span>n8n Automation</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>Custom Webhook Relays</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>Third-Party API Integrations</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>Custom Plugins &amp; Nodes</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>Automated ETL Pipelines</span>
+                        <span class="skill-chip"><span class="chip-dot"></span>Resilient Retry Logic</span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Static Proficiency Percentage Display -->
+                <div class="card-right-col">
+                    <div class="proficiency-panel">
+                        <div class="proficiency-panel-header">
+                            <span class="panel-kicker">PROFICIENCY METRICS</span>
+                            <span class="panel-badge">AUTOMATED</span>
+                        </div>
+                        <div class="proficiency-meters-list">
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">n8n Flow Orchestration</span>
+                                    <span class="meter-percent">96%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 96%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">Custom Webhook Relays</span>
+                                    <span class="meter-percent">94%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 94%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">Third-Party API Integrations</span>
+                                    <span class="meter-percent">93%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 93%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">Automated ETL &amp; Ingestion</span>
+                                    <span class="meter-percent">90%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="meter-row">
+                                <div class="meter-info">
+                                    <span class="meter-name">Resilient Retry &amp; Recovery</span>
+                                    <span class="meter-percent">91%</span>
+                                </div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" style="width: 91%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
         </div>
-    </main>
+
+        <!-- Metric Benchmarks Section (Authentic Profile Benchmarks) -->
+        <section class="skills-metrics-strip" aria-label="Engineering Benchmarks">
+            <div class="metric-card">
+                <span class="metric-value">40+</span>
+                <span class="metric-label">Technologies &amp; Libraries</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">1+</span>
+                <span class="metric-label">Years Industry Experience</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">5</span>
+                <span class="metric-label">Production Projects Delivered</span>
+            </div>
+            <div class="metric-card">
+                <span class="metric-value">100%</span>
+                <span class="metric-label">Type-Safe &amp; Asynchronous</span>
+            </div>
+        </section>
+
+        <!-- Call to Action Banner -->
+        <section class="skills-cta-banner">
+            <div class="cta-content">
+                <h2>Have an engineering challenge?</h2>
+                <p>Let's collaborate to build autonomous AI agents or high-performance backend infrastructure.</p>
+            </div>
+            <div class="cta-actions">
+                <a href="/#contact" class="btn-build">Initiate Project &rarr;</a>
+                <a href="/#projects" class="btn-outline">Inspect Shipped Code</a>
+            </div>
+        </section>
+    </div>
+</main>
 {% endblock %}
 
-{% block extra_js %}<script src="/static/js/skills.js"></script>{% endblock %}
+{% block extra_js %}
+<script src="/static/js/skills.js"></script>
+{% endblock %}
