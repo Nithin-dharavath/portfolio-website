@@ -92,6 +92,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrollTrackerThumb.style.top = `${scrollPercent * 100}%`;
             }
         }
+
+        // Light Hero Navigation & Floating Dock Visibility
+        const mainNav = document.querySelector('.main-nav');
+        const heroSection = document.getElementById('home');
+        const heroHeight = heroSection ? (heroSection.offsetHeight - 120) : 400;
+
+        if (window.pageYOffset > 50) {
+            if (mainNav) mainNav.classList.add('nav-scrolled');
+        } else {
+            if (mainNav) mainNav.classList.remove('nav-scrolled');
+        }
+
+        if (window.pageYOffset > heroHeight) {
+            document.body.classList.add('scrolled-past-hero');
+        } else {
+            document.body.classList.remove('scrolled-past-hero');
+        }
     };
 
     window.addEventListener('scroll', updateScrollState, { passive: true });
@@ -191,12 +208,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // -------------------------------------------------------------
     // Contact Form AJAX Submission with Status Feedback
     // -------------------------------------------------------------
+    // Contact Form AJAX Handler with Accessible Feedback
+    // -------------------------------------------------------------
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
+        const feedbackEl = document.getElementById('contact-form-feedback');
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const btn = contactForm.querySelector('button');
-            const originalText = btn.innerText;
+            const btn = contactForm.querySelector('button[type="submit"]') || contactForm.querySelector('button');
+            const originalHtml = btn.innerHTML;
+
+            if (feedbackEl) {
+                feedbackEl.className = 'form-feedback';
+                feedbackEl.textContent = '';
+            }
 
             btn.innerText = 'Sending...';
             btn.disabled = true;
@@ -216,22 +241,230 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (data.ok) {
                     btn.innerText = 'Message Sent! ✓';
-                    btn.className = 'btn btn-success full-width';
+                    btn.className = 'btn btn-primary btn-submit full-width btn-success';
+                    if (feedbackEl) {
+                        feedbackEl.className = 'form-feedback is-visible success';
+                        feedbackEl.textContent = data.message || 'Thank you! Your message has been sent successfully.';
+                    }
+                    contactForm.reset();
+                    setTimeout(() => {
+                        btn.innerHTML = originalHtml;
+                        btn.disabled = false;
+                        btn.className = 'btn btn-primary btn-submit full-width';
+                    }, 4000);
                 } else {
-                    btn.innerText = 'Failed! Try Again';
-                    btn.className = 'btn btn-error full-width';
+                    btn.innerText = 'Failed to Send';
+                    btn.className = 'btn btn-primary btn-submit full-width btn-error';
+                    if (feedbackEl) {
+                        feedbackEl.className = 'form-feedback is-visible error';
+                        if (data.errors && Array.isArray(data.errors)) {
+                            feedbackEl.textContent = data.errors.join(' ');
+                        } else {
+                            feedbackEl.textContent = data.message || 'Unable to send message. Please review the form fields.';
+                        }
+                    }
+                    setTimeout(() => {
+                        btn.innerHTML = originalHtml;
+                        btn.disabled = false;
+                        btn.className = 'btn btn-primary btn-submit full-width';
+                    }, 3500);
                 }
             } catch {
-                btn.innerText = 'Failed! Try Again';
-                btn.className = 'btn btn-error full-width';
+                clearTimeout(timeoutId);
+                btn.innerText = 'Connection Error';
+                btn.className = 'btn btn-primary btn-submit full-width btn-error';
+                if (feedbackEl) {
+                    feedbackEl.className = 'form-feedback is-visible error';
+                    feedbackEl.textContent = 'Network or server timeout. Please check your connection and try again.';
+                }
+                setTimeout(() => {
+                    btn.innerHTML = originalHtml;
+                    btn.disabled = false;
+                    btn.className = 'btn btn-primary btn-submit full-width';
+                }, 3500);
             }
-
-            setTimeout(() => {
-                btn.innerText = originalText;
-                btn.disabled = false;
-                btn.className = 'btn btn-primary full-width';
-                contactForm.reset();
-            }, 3000);
         });
     }
+
+    // -------------------------------------------------------------
+    // Hero Floating Card Carousel (Real Projects Highlight)
+    // -------------------------------------------------------------
+    const cardTag = document.getElementById('card-tag');
+    const cardTitle = document.getElementById('card-title');
+    const cardSub = document.getElementById('card-sub');
+    const cardProgress = document.getElementById('card-progress');
+    const btnPrev = document.getElementById('card-btn-prev');
+    const btnNext = document.getElementById('card-btn-next');
+
+    if (cardTitle && cardSub && btnPrev && btnNext) {
+        const highlights = [
+            {
+                tag: 'SYSTEM HIGHLIGHT',
+                title: 'Code to create.',
+                sub: 'Ideas into systems.',
+                progress: '60%'
+            },
+            {
+                tag: 'AI AGENTS',
+                title: 'Autonomous Swarms',
+                sub: 'Stateful tool-calling networks.',
+                progress: '85%'
+            },
+            {
+                tag: 'BACKEND ARCHITECTURE',
+                title: 'High-Throughput APIs',
+                sub: 'FastAPI & async databases.',
+                progress: '100%'
+            }
+        ];
+
+        let currentIndex = 0;
+
+        const updateHighlightCard = (index) => {
+            const item = highlights[index];
+            if (!item) return;
+
+            cardTitle.style.transition = 'opacity 0.15s ease';
+            cardSub.style.transition = 'opacity 0.15s ease';
+            cardTitle.style.opacity = '0';
+            cardSub.style.opacity = '0';
+
+            setTimeout(() => {
+                if (cardTag) cardTag.textContent = item.tag;
+                cardTitle.textContent = item.title;
+                cardSub.textContent = item.sub;
+                if (cardProgress) cardProgress.style.width = item.progress;
+
+                cardTitle.style.opacity = '1';
+                cardSub.style.opacity = '1';
+            }, 150);
+        };
+
+        btnPrev.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + highlights.length) % highlights.length;
+            updateHighlightCard(currentIndex);
+        });
+
+        btnNext.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % highlights.length;
+            updateHighlightCard(currentIndex);
+        });
+    }
+
+    // -------------------------------------------------------------
+    // Hero Video Playback & Fallback Handling
+    // -------------------------------------------------------------
+    const heroVideo = document.querySelector('.hero-cyber-video');
+    const heroFallback = document.querySelector('.hero-video-fallback');
+
+    if (heroVideo) {
+        heroVideo.muted = true;
+
+        heroVideo.addEventListener('error', () => {
+            if (heroFallback) {
+                heroFallback.style.display = 'block';
+                heroVideo.style.display = 'none';
+            }
+        });
+
+        const tryPlay = () => {
+            const playPromise = heroVideo.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(() => {
+                    // Autoplay paused by browser policy; poster image remains visible
+                });
+            }
+        };
+
+        if (heroVideo.readyState >= 2) {
+            tryPlay();
+        } else {
+            heroVideo.addEventListener('canplay', tryPlay, { once: true });
+        }
+    }
+
+    // -------------------------------------------------------------
+    // Featured Projects Category Filtering & Carousel Navigation
+    // -------------------------------------------------------------
+    const projectFilterChips = document.querySelectorAll('.project-filter-chip');
+    const projectCards = document.querySelectorAll('.editorial-card');
+    const projectsEmptyState = document.getElementById('projects-empty-state');
+    const carouselDots = document.querySelectorAll('.carousel-dot-btn');
+    const btnProjectPrev = document.getElementById('projects-btn-prev');
+    const btnProjectNext = document.getElementById('projects-btn-next');
+    const projectsTrack = document.getElementById('projects-track');
+
+    if (projectFilterChips.length > 0 && projectCards.length > 0) {
+        projectFilterChips.forEach((chip) => {
+            chip.addEventListener('click', () => {
+                const filter = chip.dataset.filter || 'all';
+
+                projectFilterChips.forEach((c) => {
+                    c.classList.remove('active');
+                    c.setAttribute('aria-selected', 'false');
+                });
+                chip.classList.add('active');
+                chip.setAttribute('aria-selected', 'true');
+
+                let visibleCount = 0;
+                projectCards.forEach((card) => {
+                    const categories = (card.dataset.category || '').split(' ');
+                    if (filter === 'all' || categories.includes(filter)) {
+                        card.style.display = 'flex';
+                        card.style.opacity = '1';
+                        visibleCount++;
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.display = 'none';
+                    }
+                });
+
+                if (projectsEmptyState) {
+                    if (visibleCount === 0) {
+                        projectsEmptyState.hidden = false;
+                    } else {
+                        projectsEmptyState.hidden = true;
+                    }
+                }
+            });
+        });
+    }
+
+    if (carouselDots.length > 0 && projectCards.length > 0) {
+        let activeCardIndex = 0;
+
+        const setActiveCard = (index) => {
+            const boundedIndex = (index + projectCards.length) % projectCards.length;
+            activeCardIndex = boundedIndex;
+
+            carouselDots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === boundedIndex);
+            });
+
+            const targetCard = projectCards[boundedIndex];
+            if (targetCard && window.innerWidth <= 1024) {
+                targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+        };
+
+        carouselDots.forEach((dot) => {
+            dot.addEventListener('click', () => {
+                const index = parseInt(dot.dataset.index || '0', 10);
+                setActiveCard(index);
+            });
+        });
+
+        if (btnProjectPrev) {
+            btnProjectPrev.addEventListener('click', () => {
+                setActiveCard(activeCardIndex - 1);
+            });
+        }
+
+        if (btnProjectNext) {
+            btnProjectNext.addEventListener('click', () => {
+                setActiveCard(activeCardIndex + 1);
+            });
+        }
+    }
 });
+

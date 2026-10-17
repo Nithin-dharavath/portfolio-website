@@ -10,7 +10,7 @@
 {% block extra_css %}<link rel="stylesheet" href="/static/css/skills.css">{% endblock %}
 
 {% block content %}
-<main class="skills-page">
+<main class="skills-page" id="main-content">
     <div class="container">
         <!-- Editorial Header Section -->
         <header class="skills-editorial-header">
@@ -405,6 +405,18 @@
                             Production inference services, scikit-learn predictive modeling, vector retrieval (RAG), and prompt engineering for enterprise automation.
                         </p>
                     </div>
+
+                    <!-- Visual ML & RAG Pipeline Diagram -->
+                    <div class="agent-pipeline-visual" aria-hidden="true">
+                        <div class="pipeline-step"><span class="step-icon">📥</span> Data Ingestion</div>
+                        <div class="pipeline-arrow">&rarr;</div>
+                        <div class="pipeline-step"><span class="step-icon">🧬</span> Embeddings &amp; Chunking</div>
+                        <div class="pipeline-arrow">&rarr;</div>
+                        <div class="pipeline-step"><span class="step-icon">🔎</span> Semantic Retrieval (Qdrant)</div>
+                        <div class="pipeline-arrow">&rarr;</div>
+                        <div class="pipeline-step"><span class="step-icon">🧠</span> LLM Synthesis</div>
+                    </div>
+
                     <div class="bento-skills-list">
                         <span class="skill-chip"><span class="chip-dot"></span>scikit-learn</span>
                         <span class="skill-chip"><span class="chip-dot"></span>PyTorch</span>
@@ -487,6 +499,18 @@
                             Asynchronous microservices, strict type validation, rate limiting, and resilient API architectures built for scale and zero downtime.
                         </p>
                     </div>
+
+                    <!-- Visual Backend Pipeline Diagram -->
+                    <div class="agent-pipeline-visual" aria-hidden="true">
+                        <div class="pipeline-step"><span class="step-icon">⚡</span> Request Ingress</div>
+                        <div class="pipeline-arrow">&rarr;</div>
+                        <div class="pipeline-step"><span class="step-icon">🛡️</span> Pydantic v2 Validation</div>
+                        <div class="pipeline-arrow">&rarr;</div>
+                        <div class="pipeline-step"><span class="step-icon">⚙️</span> Async Business Logic</div>
+                        <div class="pipeline-arrow">&rarr;</div>
+                        <div class="pipeline-step"><span class="step-icon">🗄️</span> DB &amp; Cache Commit</div>
+                    </div>
+
                     <div class="bento-skills-list">
                         <span class="skill-chip"><span class="chip-dot"></span>FastAPI</span>
                         <span class="skill-chip"><span class="chip-dot"></span>Django</span>
@@ -570,6 +594,18 @@
                             Relational schema design, transactional integrity, low-latency caching, and vector indexing for high-dimensional semantic search.
                         </p>
                     </div>
+
+                    <!-- Visual Data & Vector Pipeline Diagram -->
+                    <div class="agent-pipeline-visual" aria-hidden="true">
+                        <div class="pipeline-step"><span class="step-icon">📑</span> Normalized Schema</div>
+                        <div class="pipeline-arrow">&rarr;</div>
+                        <div class="pipeline-step"><span class="step-icon">🔄</span> SQLAlchemy ORM</div>
+                        <div class="pipeline-arrow">&rarr;</div>
+                        <div class="pipeline-step"><span class="step-icon">⚡</span> Redis Low-Latency Cache</div>
+                        <div class="pipeline-arrow">&rarr;</div>
+                        <div class="pipeline-step"><span class="step-icon">🎯</span> Qdrant Vector Index</div>
+                    </div>
+
                     <div class="bento-skills-list">
                         <span class="skill-chip"><span class="chip-dot"></span>PostgreSQL</span>
                         <span class="skill-chip"><span class="chip-dot"></span>MySQL</span>
@@ -652,6 +688,18 @@
                             Dockerized multi-stage container builds, automated GitHub Actions CI/CD pipelines, and cloud hosting with automated rollback safety.
                         </p>
                     </div>
+
+                    <!-- Visual Cloud & CI/CD Pipeline Diagram -->
+                    <div class="agent-pipeline-visual" aria-hidden="true">
+                        <div class="pipeline-step"><span class="step-icon">💻</span> Git Push</div>
+                        <div class="pipeline-arrow">&rarr;</div>
+                        <div class="pipeline-step"><span class="step-icon">🧪</span> Pytest CI Validation</div>
+                        <div class="pipeline-arrow">&rarr;</div>
+                        <div class="pipeline-step"><span class="step-icon">🐳</span> Docker Multi-Stage</div>
+                        <div class="pipeline-arrow">&rarr;</div>
+                        <div class="pipeline-step"><span class="step-icon">🚀</span> Zero-Downtime Deploy</div>
+                    </div>
+
                     <div class="bento-skills-list">
                         <span class="skill-chip"><span class="chip-dot"></span>Docker</span>
                         <span class="skill-chip"><span class="chip-dot"></span>Git &amp; GitHub</span>
@@ -733,6 +781,18 @@
                             End-to-end automation pipelines, n8n orchestrations, webhook relays, and programmatic data extraction routines that eliminate operational drag.
                         </p>
                     </div>
+
+                    <!-- Visual Automation Pipeline Diagram -->
+                    <div class="agent-pipeline-visual" aria-hidden="true">
+                        <div class="pipeline-step"><span class="step-icon">🪝</span> Webhook Trigger</div>
+                        <div class="pipeline-arrow">&rarr;</div>
+                        <div class="pipeline-step"><span class="step-icon">⚡</span> n8n Flow Routing</div>
+                        <div class="pipeline-arrow">&rarr;</div>
+                        <div class="pipeline-step"><span class="step-icon">🔌</span> Third-Party API Relay</div>
+                        <div class="pipeline-arrow">&rarr;</div>
+                        <div class="pipeline-step"><span class="step-icon">📊</span> Execution &amp; Auto-Retry</div>
+                    </div>
+
                     <div class="bento-skills-list">
                         <span class="skill-chip"><span class="chip-dot"></span>n8n Automation</span>
                         <span class="skill-chip"><span class="chip-dot"></span>Custom Webhook Relays</span>

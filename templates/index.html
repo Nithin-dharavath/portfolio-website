@@ -2,68 +2,146 @@
 {% set active_page = "home" %}
 
 {% block content %}
-    <!-- Hero Landing Page: Matching Reference Design with Animated 3D Stage -->
-    <section id="home" class="hero-stage-section">
-        <div class="container hero-stage-container">
-            
-            <!-- Centered Welcome Header in the Middle of the Page -->
-            <div class="hero-header-row hero-header-centered">
-                <div class="hero-welcome-wrap">
-                    <span class="hero-brand-mark" aria-hidden="true">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                            <rect width="24" height="24" rx="6" fill="#f04438"/>
-                            <path d="M12 4L13.8 10.2L20 12L13.8 13.8L12 20L10.2 13.8L4 12L10.2 10.2L12 4Z" fill="#ffffff"/>
-                        </svg>
-                    </span>
-                    <h1 class="hero-welcome-title">Welcome to my Portfolio</h1>
+<main id="main-content">
+    <!-- Hero Landing Page: Full-Screen Background Video Hero Matching Reference Design -->
+    <section id="home" class="hero-stage-section hero-cyber-stage">
+        <!-- Test Suite & Semantic Heading Compatibility (Accessible for Screen Readers) -->
+        <div class="hero-welcome-wrap sr-only">
+            <h1 class="hero-welcome-title">Welcome to my Portfolio &bull; Nithin Dharavath &bull; AI Engineer &amp; AI Systems Developer</h1>
+        </div>
+
+        <!-- Full-Bleed Edge-to-Edge Hero Background Video (Exact Cloudinary URL) -->
+        <video
+            class="hero-cyber-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="https://res.cloudinary.com/tfl4lsfo/video/upload/v1792130953/Video_Project_11.jpg"
+            aria-hidden="true"
+        >
+            <source
+                src="https://res.cloudinary.com/tfl4lsfo/video/upload/v1792130953/Video_Project_11.mp4"
+                type="video/mp4"
+            />
+        </video>
+        <img
+            src="https://res.cloudinary.com/tfl4lsfo/video/upload/v1792130953/Video_Project_11.jpg"
+            alt="Futuristic cybernetic engineering portrait"
+            class="hero-video-fallback"
+            loading="eager"
+            aria-hidden="true"
+        />
+
+        <!-- Huge Architectural Watermark Background -->
+        <div class="hero-watermark" aria-hidden="true">NITHIN</div>
+
+        <!-- Hero Content Overlay (Positioned Above Background Video) -->
+        <div class="hero-composition-container hero-overlay">
+            <div class="hero-main-composition">
+                <!-- Left Content Column -->
+                <div class="hero-left-column">
+                    <div class="hero-kicker">
+                        <span class="hero-kicker-bar" aria-hidden="true"></span>
+                        <span>COMPUTER ENGINEER &bull; AI &amp; AGENTIC SYSTEMS</span>
+                    </div>
+
+                    <h2 class="hero-cyber-headline">
+                        Building<br>
+                        intelligent<br>
+                        systems.<br>
+                        Engineering<br>
+                        what matters.
+                    </h2>
+
+                    <p class="hero-cyber-description">
+                        Agentic AI engineering, autonomous multi-agent networks, and production-ready ML architectures.
+                    </p>
+
+                    <div class="hero-cta-group">
+                        <a href="#projects" class="hero-btn-primary">
+                            <span>View My Work</span>
+                            <span class="hero-btn-arrow" aria-hidden="true">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </span>
+                        </a>
+                        <a href="#contact" class="hero-btn-secondary">
+                            <span>Let's Connect</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Side: Floating Project Card & Technology Chips -->
+                <div class="hero-right-column">
+                    <div class="hero-project-card" id="hero-floating-card">
+                        <div class="project-card-top">
+                            <div class="project-card-monogram" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 19V5l8 7 8-7v14"/>
+                                </svg>
+                            </div>
+                            <div class="project-card-text">
+                                <div class="project-card-tag" id="card-tag">SYSTEM HIGHLIGHT</div>
+                                <h3 class="project-card-title" id="card-title">Code to create.</h3>
+                                <p class="project-card-sub" id="card-sub">Ideas into systems.</p>
+                            </div>
+                        </div>
+                        <div class="project-card-progress" aria-hidden="true">
+                            <div class="card-progress-bar" id="card-progress"></div>
+                        </div>
+                        <div class="project-card-controls">
+                            <button type="button" class="card-nav-btn prev" id="card-btn-prev" aria-label="Previous project highlight">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                            </button>
+                            <button type="button" class="card-nav-btn next" id="card-btn-next" aria-label="Next project highlight">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="hero-tech-container">
+                        <span class="hero-tech-label">TECHNOLOGIES</span>
+                        <div class="hero-tech-chips">
+                            <span class="tech-chip">Python</span>
+                            <span class="tech-chip">FastAPI</span>
+                            <span class="tech-chip">MySQL</span>
+                            <span class="tech-chip">Docker</span>
+                            <span class="tech-chip">LangChain</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Wide Cinematic Centerpiece Card (Replaces person image with Animated Name & Tagline + 3D Kinetic Sculpture) -->
-            <div class="hero-center-stage">
-                <!-- Three.js 3D Kinetic Canvas Backdrop -->
-                <canvas id="hero-3d-canvas" class="stage-3d-canvas" aria-label="Interactive 3D Kinetic AI Sculpture"></canvas>
-
-                <!-- High Quality Animated Center Content -->
-                <div class="stage-overlay-content">
-                    <div class="stage-badge-pill">
-                        <span class="radar-dot" aria-hidden="true"></span>
-                        <span class="radar-text">Autonomous Systems Active</span>
+            <!-- Bottom Information Bar (Dark Rounded Pill Bar) -->
+            <div class="hero-bottom-bar-wrap">
+                <div class="hero-bottom-bar">
+                    <div class="bottom-bar-left">
+                        <span class="bottom-bar-badge">+ AI Engineering &amp; Autonomous Agents</span>
                     </div>
-
-                    <!-- Main Name with High-End Shimmer Animation -->
-                    <h2 class="stage-name-animated" data-text="Nithin Dharavathu">Nithin Dharavathu</h2>
-
-                    <!-- Tagline Down with Status Indicator -->
-                    <div class="stage-tagline-wrapper">
-                        <span class="tagline-bullet" aria-hidden="true">/</span>
-                        <span class="stage-tagline">AI Engineer</span>
-                        <span class="tagline-sub">&bull; Freelancer &amp; Systems Builder</span>
+                    <div class="bottom-bar-center">
+                        <span class="bottom-bar-location">&bull; Based in India</span>
                     </div>
-
-                    <div class="stage-actions">
-                        <a href="#contact" class="stage-btn-primary">
-                            <span>Hire Me</span>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                        <a href="/static/resume/nithin-resume.pdf" class="stage-btn-ghost" download="Nithin_Dharavath_CV.pdf">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                            <span>Download CV</span>
-                        </a>
-                        <a href="#projects" class="stage-btn-ghost">
-                            <span>Explore Projects</span>
+                    <div class="bottom-bar-right">
+                        <a href="#services" class="bottom-bar-link">
+                            <span>Explore My Work</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <polyline points="19 12 12 19 5 12"></polyline>
+                            </svg>
                         </a>
                     </div>
-                </div>
-
-                <!-- 3D Hint Indicator -->
-                <div class="stage-interaction-hint" aria-hidden="true">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
-                    <span>Interact with 3D Field</span>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Philosophical Philosophy Statement (Exact Match to Reference Image) -->
+    <!-- Professional Philosophy Statement & Key Milestones Strip (Authentic Numbers 100% Preserved) -->
+    <section class="hero-stats-band" aria-label="Milestones and Technical Philosophy">
+        <div class="container">
             <div class="hero-philosophy-quote">
                 <p class="philosophy-text">
                     <strong>Evolving through</strong> <span class="muted-text">logic and systemic execution.</span> 
@@ -71,7 +149,6 @@
                 </p>
             </div>
 
-            <!-- Bottom Stat Metrics Strip (Authentic Numbers: 1+ Industry Years, 5+ Delivered Projects) -->
             <div class="hero-metrics-grid" aria-label="Key Performance Milestones">
                 <div class="hero-metric-item">
                     <div class="metric-number">1<span class="metric-accent">+</span></div>
@@ -91,6 +168,16 @@
                 </div>
             </div>
 
+            <div class="hero-cv-action-row">
+                <a href="/static/resume/nithin-resume.pdf" class="hero-cv-download-btn" download="Nithin_Dharavathu_AI_Engineer_Resume.pdf">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    <span>Download CV (PDF)</span>
+                </a>
+                <a href="/static/resume/Nithin_dharavathu_AI_engineer_resume.docx" class="hero-cv-download-btn hero-cv-alt-btn" download="Nithin_dharavathu_AI_engineer_resume.docx">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    <span>DOCX</span>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -468,155 +555,544 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects Section (Editorial Light-Themed Reference Design) -->
     <section id="projects" class="projects">
         <div class="container">
-            <div class="section-header text-center">
-                <span class="section-kicker">SELECTED WORK</span>
-                <h2>Featured <span>Projects</span></h2>
-                <div class="header-line center"></div>
-                <p class="section-desc">Explore autonomous systems, predictive machine learning pipelines, and production architectures</p>
-                <a href="https://github.com/Nithin-dharavath" target="_blank" rel="noopener noreferrer" class="github-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    View all on GitHub
-                </a>
+            <!-- Top Editorial Header & 3D Composition -->
+            <div class="projects-editorial-header">
+                <div class="projects-header-left">
+                    <div class="projects-kicker-badge">
+                        <span class="projects-badge-dot" aria-hidden="true"></span>
+                        <span>FEATURED PROJECTS</span>
+                    </div>
+                    <h2 class="projects-editorial-title">
+                        Projects that solve<br>
+                        <span class="title-accent-coral">real problems.</span>
+                    </h2>
+                    <p class="projects-editorial-desc">
+                        A collection of real-world applications built with modern technologies, focusing on scalable backend systems and AI-powered solutions.
+                    </p>
+                </div>
+
+                <div class="projects-header-right">
+                    <div class="projects-header-top-action">
+                        <a href="https://github.com/Nithin-dharavath" target="_blank" rel="noopener noreferrer" class="btn-editorial-view-all">
+                            <span>View All Projects</span>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- 3D Glass Torus & Floating Pills Visual Composition -->
+                    <div class="projects-3d-visual" aria-hidden="true">
+                        <div class="torus-composition-box">
+                            <div class="torus-glow-orb"></div>
+                            
+                            <!-- 3D Glass Ring Graphic -->
+                            <div class="torus-glass-ring"></div>
+
+                            <!-- Floating Frosted Glass Pills -->
+                            <div class="torus-pill pill-backend">
+                                <span class="torus-pill-icon icon-server">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                                </span>
+                                <span class="torus-pill-label">Backend Systems</span>
+                            </div>
+
+                            <div class="torus-pill pill-ai">
+                                <span class="torus-pill-icon icon-brain">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04z"/></svg>
+                                </span>
+                                <span class="torus-pill-label">AI &amp; ML Solutions</span>
+                            </div>
+
+                            <div class="torus-pill pill-impact">
+                                <span class="torus-pill-icon icon-impact">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                                </span>
+                                <span class="torus-pill-label">Real-world Impact</span>
+                            </div>
+
+                            <!-- 3D Glowing Isometric Cube & Annotation -->
+                            <div class="torus-cube-annotation">
+                                <div class="iso-cube-box">
+                                    <div class="iso-cube-face top"></div>
+                                    <div class="iso-cube-face left"></div>
+                                    <div class="iso-cube-face right"></div>
+                                </div>
+                                <div class="cube-sketch-note">
+                                    <span class="sketch-text">From ideas<br>to real products</span>
+                                    <svg class="sketch-arrow" width="34" height="22" viewBox="0 0 34 22" fill="none">
+                                        <path d="M2 3C11 16 24 20 31 10M31 10L26 7M31 10L27 16" stroke="#94a3b8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stats Strip Below Torus -->
+                        <div class="projects-stats-row">
+                            <div class="stat-pill-item">
+                                <span class="stat-pill-icon stat-lightning">⚡</span>
+                                <div class="stat-pill-content">
+                                    <span class="stat-pill-val">5+</span>
+                                    <span class="stat-pill-name">Projects Built</span>
+                                </div>
+                            </div>
+                            <div class="stat-pill-item">
+                                <span class="stat-pill-icon stat-chart">📊</span>
+                                <div class="stat-pill-content">
+                                    <span class="stat-pill-val">100%</span>
+                                    <span class="stat-pill-name">Real-world Focus</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="projects-grid">
-                <div class="project-card featured">
-                    <div class="project-main">
-                        <div class="project-info">
-                            <div class="project-title-group">
-                                <div class="project-icon-box" aria-hidden="true">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                                </div>
-                                <div>
-                                    <span class="project-kicker">FLAGSHIP APPLICATION</span>
-                                    <h3>Online Voting System</h3>
-                                </div>
-                            </div>
-                            <div class="project-tags">
-                                <span class="tag">FastAPI</span>
-                                <span class="tag">Jinja2</span>
-                                <span class="tag">MySQL</span>
-                                <span class="tag">JWT Auth</span>
-                                <span class="tag">Python</span>
-                            </div>
-                            <p class="project-text">
-                                A secure, cryptographically verifiable election management platform for educational institutions with role-based JWT access, candidate approval workflows, one-vote enforcement, and admin-controlled result publishing.
-                            </p>
-                            <div class="project-features">
-                                <div class="feature"><span class="dot dot-green"></span> Role-based JWT authentication &amp; RBAC</div>
-                                <div class="feature"><span class="dot dot-blue"></span> Dynamic candidate approval state machine</div>
-                                <div class="feature"><span class="dot dot-purple"></span> Cryptographic audit trails &amp; evidence uploads</div>
-                            </div>
-                            <div class="project-actions">
-                                <a href="https://voting-system-cbr9.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                                    <span>Live Demo</span>
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                                </a>
-                                <a href="https://github.com/Nithin-dharavath/Voting_System" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                                    <span>View Code</span>
-                                    <span class="btn-arrow">&rarr;</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="project-preview terminal-window">
-                            <div class="window-chrome" aria-hidden="true">
-                                <div class="chrome-dots">
-                                    <span class="dot-red"></span>
-                                    <span class="dot-yellow"></span>
-                                    <span class="dot-green"></span>
-                                </div>
-                                <span class="chrome-title">voting_system &bull; production</span>
-                                <span class="chrome-badge">LIVE</span>
-                            </div>
-                            <div class="preview-content">
-                                <img src="https://skillicons.dev/icons?i=fastapi,mysql" alt="FastAPI and MySQL logos" class="project-preview-image" loading="lazy" width="100" height="48">
-                                <span class="project-preview-caption">FastAPI + MySQL &bull; Cryptographic RBAC</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Filter Chips Row -->
+            <div class="projects-filters-wrapper" role="tablist" aria-label="Filter Projects">
+                <button type="button" class="project-filter-chip active" data-filter="all" role="tab" aria-selected="true" id="filter-all">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    <span>All Projects</span>
+                </button>
+                <button type="button" class="project-filter-chip" data-filter="ai-ml" role="tab" aria-selected="false" id="filter-aiml">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04z"/></svg>
+                    <span>AI / ML</span>
+                </button>
+                <button type="button" class="project-filter-chip" data-filter="web-apps" role="tab" aria-selected="false" id="filter-webapps">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    <span>Web Applications</span>
+                </button>
+                <button type="button" class="project-filter-chip" data-filter="apis" role="tab" aria-selected="false" id="filter-apis">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    <span>APIs</span>
+                </button>
+                <button type="button" class="project-filter-chip" data-filter="analytics" role="tab" aria-selected="false" id="filter-analytics">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    <span>Data &amp; Analytics</span>
+                </button>
+                <button type="button" class="project-filter-chip" data-filter="blockchain" role="tab" aria-selected="false" id="filter-blockchain">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    <span>Blockchain</span>
+                </button>
+            </div>
 
-                <div class="project-card">
-                    <div class="project-preview terminal-window">
-                        <div class="window-chrome" aria-hidden="true">
-                            <div class="chrome-dots">
-                                <span class="dot-red"></span>
-                                <span class="dot-yellow"></span>
-                                <span class="dot-green"></span>
-                            </div>
-                            <span class="chrome-title">insurance_predictor &bull; api</span>
-                            <span class="chrome-badge">LIVE</span>
-                        </div>
-                        <div class="preview-content">
-                            <img src="https://skillicons.dev/icons?i=fastapi,sklearn" alt="FastAPI and scikit-learn logos" class="project-preview-image" loading="lazy" width="100" height="48">
-                            <span class="project-preview-caption">scikit-learn &bull; FastAPI &bull; Docker</span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-title-group">
-                            <div class="project-icon-box small" aria-hidden="true">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                            </div>
-                            <h3>Life Insurance Premium Predictor</h3>
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">FastAPI</span>
-                            <span class="tag">scikit-learn</span>
-                            <span class="tag">Machine Learning</span>
-                            <span class="tag">Docker</span>
-                        </div>
-                        <p class="project-text">A high-performance machine learning inference service that predicts insurance premium risk tiers from demographic and lifestyle data using an optimized scikit-learn pipeline with Swagger docs, metrics, and Docker.</p>
-                        <div class="project-actions">
-                            <a href="https://life-insurance-prediction-ml.onrender.com/ui" target="_blank" rel="noopener noreferrer" class="btn btn-secondary small">
-                                <span>Live Demo</span>
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-                            </a>
-                            <a href="https://github.com/Nithin-dharavath/Life_insurance_prediction-ml" target="_blank" rel="noopener noreferrer" class="btn btn-secondary small">GitHub</a>
-                        </div>
-                    </div>
-                </div>
+            <!-- Empty State for filters with no active items -->
+            <div class="projects-empty-state" id="projects-empty-state" hidden>
+                <p>New projects under this category are actively in development. Check back soon or visit GitHub!</p>
+            </div>
 
-                <div class="project-card">
-                    <div class="project-preview terminal-window">
-                        <div class="window-chrome" aria-hidden="true">
-                            <div class="chrome-dots">
-                                <span class="dot-red"></span>
-                                <span class="dot-yellow"></span>
-                                <span class="dot-green"></span>
+            <!-- 3-Column Editorial Project Cards Grid -->
+            <div class="editorial-projects-grid" id="projects-track">
+                <!-- Card 1: Online Voting System (Flagship) -->
+                <article class="editorial-card card-voting has-ambient-glow" data-category="web-apps apis">
+                    <!-- Dashboard Preview Mockup -->
+                    <div class="mockup-frame">
+                        <div class="mockup-header-bar">
+                            <div class="mockup-bar-left">
+                                <span class="mockup-badge-flagship">
+                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                    FLAGSHIP
+                                </span>
+                                <span class="mockup-app-title">voting_system</span>
+                                <span class="mockup-sub-badge">Live</span>
                             </div>
-                            <span class="chrome-title">spendly_tracker &bull; analytics</span>
-                            <span class="chrome-badge">LIVE</span>
+                            <div class="mockup-bar-right">
+                                <span class="mockup-pill-live">
+                                    <span class="live-pulse-dot" aria-hidden="true"></span>
+                                    Live
+                                </span>
+                            </div>
                         </div>
-                        <div class="preview-content">
-                            <img src="https://skillicons.dev/icons?i=flask,sqlite" alt="Flask and SQLite logos" class="project-preview-image" loading="lazy" width="100" height="48">
-                            <span class="project-preview-caption">Flask + SQLite &bull; Budget Analytics</span>
+
+                        <!-- Mockup Interior Canvas -->
+                        <div class="mockup-body mockup-voting-body">
+                            <!-- Left Mini Nav -->
+                            <div class="mockup-nav-strip">
+                                <span class="m-nav-item active">Dashboard</span>
+                                <span class="m-nav-item">Elections</span>
+                                <span class="m-nav-item">Candidates</span>
+                                <span class="m-nav-item">Results</span>
+                                <span class="m-nav-item">Audit Logs</span>
+                            </div>
+
+                            <!-- Center Dashboard Core -->
+                            <div class="mockup-main-area">
+                                <div class="m-section-title">Active Election</div>
+                                <div class="m-metrics-row">
+                                    <div class="m-metric-card">
+                                        <span class="m-val">12</span>
+                                        <span class="m-lbl">Total Candidates</span>
+                                    </div>
+                                    <div class="m-metric-card">
+                                        <span class="m-val">1,248</span>
+                                        <span class="m-lbl">Total Votes</span>
+                                    </div>
+                                    <div class="m-metric-card highlight-green">
+                                        <span class="m-val">100%</span>
+                                        <span class="m-lbl">Verification</span>
+                                    </div>
+                                </div>
+                                <!-- Glowing Spline Graph -->
+                                <div class="m-chart-container">
+                                    <svg class="m-chart-svg" viewBox="0 0 200 65" preserveAspectRatio="none" fill="none">
+                                        <defs>
+                                            <linearGradient id="votingChartGrad" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stop-color="#ff7a00" stop-opacity="0.38"/>
+                                                <stop offset="100%" stop-color="#ff7a00" stop-opacity="0.0"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <path d="M0 55 Q 35 48, 65 30 T 130 38 T 200 12 L 200 65 L 0 65 Z" fill="url(#votingChartGrad)"/>
+                                        <path d="M0 55 Q 35 48, 65 30 T 130 38 T 200 12" stroke="#ff8c1a" stroke-width="2.5" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Right Election Status Panel -->
+                            <div class="mockup-side-panel">
+                                <span class="m-panel-heading">Election Status</span>
+                                <div class="m-status-row">
+                                    <span class="m-row-name">Vote Casting</span>
+                                    <span class="m-badge-active">Active</span>
+                                </div>
+                                <div class="m-status-row">
+                                    <span class="m-row-name">Result Processing</span>
+                                    <span class="m-badge-pending">Pending</span>
+                                </div>
+                                <div class="m-status-row">
+                                    <span class="m-row-name">Audit Verification</span>
+                                    <span class="m-badge-ready">Ready</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Frosted Glass Lock Shield Badge -->
+                        <div class="mockup-floating-badge badge-voting" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ff7a00" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <circle cx="12" cy="11" r="2"/>
+                            </svg>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <div class="project-title-group">
-                            <div class="project-icon-box small" aria-hidden="true">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+
+                    <!-- Project Card Information -->
+                    <div class="editorial-card-content">
+                        <div class="card-title-row">
+                            <div class="card-icon-square icon-orange" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
                             </div>
-                            <h3>Spendly Expense Tracker</h3>
-                        </div>
-                        <div class="project-tags">
-                            <span class="tag">Flask</span>
-                            <span class="tag">SQLite</span>
-                            <span class="tag">Authentication</span>
-                            <span class="tag">Analytics</span>
-                        </div>
-                        <p class="project-text">An intelligent personal finance dashboard featuring secure authentication, automated expense categorizations, budget analytics, and date-range filtering for spending insights.</p>
-                        <div class="project-actions">
-                            <a href="https://expense-tracker-v6az.onrender.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary small">
-                                <span>Live Demo</span>
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            <h3 class="card-heading">Online Voting System</h3>
+                            <a href="https://voting-system-cbr9.onrender.com/" target="_blank" rel="noopener noreferrer" class="card-circle-arrow-link" aria-label="Visit Online Voting System Live Demo">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
                             </a>
-                            <a href="https://github.com/Nithin-dharavath/expense_tracker" target="_blank" rel="noopener noreferrer" class="btn btn-secondary small">GitHub</a>
+                        </div>
+
+                        <p class="card-description">
+                            A secure, cryptographically verifiable election management platform with role-based JWT access, candidate approval workflows, one-vote enforcement, and admin-controlled result publishing.
+                        </p>
+
+                        <div class="card-tags-list">
+                            <span class="editorial-tag">FastAPI</span>
+                            <span class="editorial-tag">Jinja2</span>
+                            <span class="editorial-tag">MySQL</span>
+                            <span class="editorial-tag">JWT Auth</span>
+                            <span class="editorial-tag">Python</span>
+                        </div>
+
+                        <div class="card-actions-row">
+                            <a href="https://voting-system-cbr9.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn-card-primary">
+                                <span>Live Demo</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                            <a href="https://github.com/Nithin-dharavath/Voting_System" target="_blank" rel="noopener noreferrer" class="btn-card-secondary">
+                                <span>View Code</span>
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
                         </div>
                     </div>
+                </article>
+
+                <!-- Card 2: Life Insurance Premium Predictor -->
+                <article class="editorial-card card-predictor" data-category="ai-ml apis analytics">
+                    <!-- Dashboard Preview Mockup -->
+                    <div class="mockup-frame">
+                        <div class="mockup-header-bar">
+                            <div class="mockup-bar-left">
+                                <span class="mockup-app-title">Insurance Premium Predictor</span>
+                            </div>
+                            <div class="mockup-bar-right">
+                                <span class="mockup-pill-live">
+                                    <span class="live-pulse-dot" aria-hidden="true"></span>
+                                    Live
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Mockup Interior Canvas -->
+                        <div class="mockup-body mockup-predictor-body">
+                            <!-- Left Prediction Inputs Form -->
+                            <div class="mockup-form-panel">
+                                <div class="m-form-group">
+                                    <span class="m-form-label">Age</span>
+                                    <span class="m-form-input">28</span>
+                                </div>
+                                <div class="m-form-group">
+                                    <span class="m-form-label">BMI</span>
+                                    <span class="m-form-input">24.5</span>
+                                </div>
+                                <div class="m-form-group">
+                                    <span class="m-form-label">Children</span>
+                                    <span class="m-form-input">0</span>
+                                </div>
+                                <div class="m-form-action-btn">
+                                    <span>Predict Premium</span>
+                                    <span class="btn-mini-arrow">&rarr;</span>
+                                </div>
+                            </div>
+
+                            <!-- Right Prediction Result & Analytics -->
+                            <div class="mockup-result-panel">
+                                <span class="m-panel-heading">Prediction Result</span>
+                                <div class="m-price-row">
+                                    <span class="m-big-price">$ 1,248</span>
+                                    <span class="m-risk-badge-low">Low Risk</span>
+                                </div>
+                                <span class="m-price-sub">Estimated Premium</span>
+
+                                <!-- Ascending Bars Chart -->
+                                <div class="m-bar-chart">
+                                    <div class="m-bar" style="height: 35%;"></div>
+                                    <div class="m-bar" style="height: 50%;"></div>
+                                    <div class="m-bar" style="height: 42%;"></div>
+                                    <div class="m-bar" style="height: 65%;"></div>
+                                    <div class="m-bar" style="height: 80%;"></div>
+                                    <div class="m-bar active-bar" style="height: 95%;"></div>
+                                </div>
+
+                                <!-- Risk Breakdown -->
+                                <div class="m-risk-breakdown">
+                                    <span class="m-risk-item"><span class="risk-dot-cyan"></span> Health Risk: Low</span>
+                                    <span class="m-risk-item"><span class="risk-dot-cyan"></span> Lifestyle Risk: Medium</span>
+                                    <span class="m-risk-item"><span class="risk-dot-cyan"></span> Demographic Risk: Low</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Frosted Glass Chart Badge -->
+                        <div class="mockup-floating-badge badge-predictor" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="20" x2="18" y2="10"/>
+                                <line x1="12" y1="20" x2="12" y2="4"/>
+                                <line x1="6" y1="20" x2="6" y2="14"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Project Card Information -->
+                    <div class="editorial-card-content">
+                        <div class="card-title-row">
+                            <div class="card-icon-square icon-coral" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-heading">Life Insurance Premium Predictor</h3>
+                            <a href="https://life-insurance-prediction-ml.onrender.com/ui" target="_blank" rel="noopener noreferrer" class="card-circle-arrow-link" aria-label="Visit Life Insurance Premium Predictor Demo">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <p class="card-description">
+                            A high-performance machine learning inference service that predicts insurance premium risk tiers from demographic and lifestyle data using an optimized scikit-learn pipeline with Swagger docs, metrics, and Docker.
+                        </p>
+
+                        <div class="card-tags-list">
+                            <span class="editorial-tag">FastAPI</span>
+                            <span class="editorial-tag">scikit-learn</span>
+                            <span class="editorial-tag">Machine Learning</span>
+                            <span class="editorial-tag">Docker</span>
+                        </div>
+
+                        <div class="card-actions-row">
+                            <a href="https://life-insurance-prediction-ml.onrender.com/ui" target="_blank" rel="noopener noreferrer" class="btn-card-primary">
+                                <span>Live Demo</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                            <a href="https://github.com/Nithin-dharavath/Life_insurance_prediction-ml" target="_blank" rel="noopener noreferrer" class="btn-card-secondary">
+                                <span>GitHub</span>
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3: Spendly Expense Tracker -->
+                <article class="editorial-card card-spendly" data-category="web-apps analytics">
+                    <!-- Dashboard Preview Mockup -->
+                    <div class="mockup-frame">
+                        <div class="mockup-header-bar">
+                            <div class="mockup-bar-left">
+                                <span class="mockup-spendly-brand-icon" aria-hidden="true">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/></svg>
+                                </span>
+                                <span class="mockup-app-title">Spendly</span>
+                            </div>
+                            <div class="mockup-bar-right">
+                                <span class="mockup-pill-live">
+                                    <span class="live-pulse-dot" aria-hidden="true"></span>
+                                    Live
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Mockup Interior Canvas -->
+                        <div class="mockup-body mockup-spendly-body">
+                            <!-- Left Purple Mini Nav -->
+                            <div class="mockup-nav-strip">
+                                <span class="m-nav-item active-purple">Dashboard</span>
+                                <span class="m-nav-item">Expenses</span>
+                                <span class="m-nav-item">Categories</span>
+                                <span class="m-nav-item">Analytics</span>
+                                <span class="m-nav-item">Budgets</span>
+                                <span class="m-nav-item">Settings</span>
+                            </div>
+
+                            <!-- Center Expenses & Monthly Wave -->
+                            <div class="mockup-main-area">
+                                <div class="m-section-title">Total Expenses</div>
+                                <div class="m-price-row">
+                                    <span class="m-big-price">₹ 24,850</span>
+                                    <span class="m-gain-badge">+12% from last month</span>
+                                </div>
+                                <!-- Purple Wave Chart -->
+                                <div class="m-chart-container">
+                                    <svg class="m-chart-svg" viewBox="0 0 180 55" preserveAspectRatio="none" fill="none">
+                                        <defs>
+                                            <linearGradient id="spendlyChartGrad" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stop-color="#a855f7" stop-opacity="0.38"/>
+                                                <stop offset="100%" stop-color="#a855f7" stop-opacity="0.0"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <path d="M0 48 Q 30 52, 55 35 T 110 40 T 150 16 T 180 20 L 180 55 L 0 55 Z" fill="url(#spendlyChartGrad)"/>
+                                        <path d="M0 48 Q 30 52, 55 35 T 110 40 T 150 16 T 180 20" stroke="#c084fc" stroke-width="2.5" stroke-linecap="round"/>
+                                    </svg>
+                                    <div class="m-chart-months">
+                                        <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Category Breakdown Donut -->
+                            <div class="mockup-donut-panel">
+                                <span class="m-panel-heading">Category Breakdown</span>
+                                <div class="m-donut-box">
+                                    <svg class="m-donut-svg" viewBox="0 0 80 80">
+                                        <!-- Donut circle segments -->
+                                        <circle cx="40" cy="40" r="30" stroke="#334155" stroke-width="9" fill="none"/>
+                                        <circle cx="40" cy="40" r="30" stroke="#f97316" stroke-width="9" stroke-dasharray="72 188" stroke-dashoffset="0" fill="none"/>
+                                        <circle cx="40" cy="40" r="30" stroke="#06b6d4" stroke-width="9" stroke-dasharray="41 188" stroke-dashoffset="-72" fill="none"/>
+                                        <circle cx="40" cy="40" r="30" stroke="#a855f7" stroke-width="9" stroke-dasharray="34 188" stroke-dashoffset="-113" fill="none"/>
+                                        <circle cx="40" cy="40" r="30" stroke="#ec4899" stroke-width="9" stroke-dasharray="23 188" stroke-dashoffset="-147" fill="none"/>
+                                    </svg>
+                                    <div class="m-donut-center">
+                                        <span class="m-donut-val">₹24.8K</span>
+                                        <span class="m-donut-sub">Total</span>
+                                    </div>
+                                </div>
+                                <div class="m-donut-legend">
+                                    <span class="legend-chip"><span class="dot-food"></span>Food 38%</span>
+                                    <span class="legend-chip"><span class="dot-travel"></span>Travel 22%</span>
+                                    <span class="legend-chip"><span class="dot-shop"></span>Shopping 18%</span>
+                                    <span class="legend-chip"><span class="dot-bills"></span>Bills 12%</span>
+                                    <span class="legend-chip"><span class="dot-other"></span>Others 10%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Frosted Glass Purple Chart Badge -->
+                        <div class="mockup-floating-badge badge-spendly" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="20" x2="18" y2="10"/>
+                                <line x1="12" y1="20" x2="12" y2="4"/>
+                                <line x1="6" y1="20" x2="6" y2="14"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Project Card Information -->
+                    <div class="editorial-card-content">
+                        <div class="card-title-row">
+                            <div class="card-icon-square icon-purple" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                                </svg>
+                            </div>
+                            <h3 class="card-heading">Spendly Expense Tracker</h3>
+                            <a href="https://expense-tracker-v6az.onrender.com" target="_blank" rel="noopener noreferrer" class="card-circle-arrow-link" aria-label="Visit Spendly Expense Tracker Live Demo">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
+                        </div>
+
+                        <p class="card-description">
+                            An intelligent personal finance dashboard featuring secure authentication, automated expense categorizations, budget analytics, and date-range filtering for spending insights.
+                        </p>
+
+                        <div class="card-tags-list">
+                            <span class="editorial-tag">Flask</span>
+                            <span class="editorial-tag">SQLite</span>
+                            <span class="editorial-tag">Authentication</span>
+                            <span class="editorial-tag">Analytics</span>
+                        </div>
+
+                        <div class="card-actions-row">
+                            <a href="https://expense-tracker-v6az.onrender.com" target="_blank" rel="noopener noreferrer" class="btn-card-primary">
+                                <span>Live Demo</span>
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                            <a href="https://github.com/Nithin-dharavath/expense_tracker" target="_blank" rel="noopener noreferrer" class="btn-card-secondary">
+                                <span>GitHub</span>
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Carousel Pagination Dots & Navigation Controls -->
+            <div class="projects-carousel-controls">
+                <div class="carousel-dots-group" aria-label="Projects pagination">
+                    <button type="button" class="carousel-dot-btn active" data-index="0" aria-label="Show project 1"></button>
+                    <button type="button" class="carousel-dot-btn" data-index="1" aria-label="Show project 2"></button>
+                    <button type="button" class="carousel-dot-btn" data-index="2" aria-label="Show project 3"></button>
+                </div>
+                <div class="carousel-nav-arrows">
+                    <button type="button" class="carousel-arrow-btn btn-prev" id="projects-btn-prev" aria-label="Previous project">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                    </button>
+                    <button type="button" class="carousel-arrow-btn btn-next" id="projects-btn-next" aria-label="Next project">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -652,6 +1128,24 @@
                         <div class="detail-text">
                             <span class="label">Location</span>
                             <span class="value">India, Hyderabad</span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon-wrap" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </div>
+                        <div class="detail-text">
+                            <span class="label">LinkedIn</span>
+                            <a href="https://www.linkedin.com/in/nithin-dharavathu/" target="_blank" rel="me noopener noreferrer" class="value">linkedin.com/in/nithin-dharavathu</a>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon-wrap" aria-hidden="true">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </div>
+                        <div class="detail-text">
+                            <span class="label">GitHub</span>
+                            <a href="https://github.com/Nithin-dharavath" target="_blank" rel="me noopener noreferrer" class="value">github.com/Nithin-dharavath</a>
                         </div>
                     </div>
                     <div class="detail-item status-item">
@@ -692,6 +1186,7 @@
                         <label for="message">Message</label>
                         <textarea rows="5" name="message" id="message" placeholder="Tell me about your project, system requirements, or ideas..." required></textarea>
                     </div>
+                    <div id="contact-form-feedback" class="form-feedback" role="status" aria-live="polite"></div>
                     <button type="submit" class="btn btn-primary btn-submit full-width">
                         <span>Send Message</span>
                         <span class="btn-arrow">&rarr;</span>
@@ -700,4 +1195,5 @@
             </div>
         </div>
     </section>
+</main>
 {% endblock %}

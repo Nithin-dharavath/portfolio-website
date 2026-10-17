@@ -36,7 +36,8 @@
 }
 
 .kicker-path {
-    color: var(--text-dim);
+    color: var(--text-muted);
+    font-weight: 500;
 }
 
 .skills-hero-title {
@@ -45,24 +46,25 @@
     font-weight: 700;
     line-height: 1.05;
     letter-spacing: -0.04em;
-    color: #ffffff;
+    color: var(--text-main);
     margin-bottom: 1.5rem;
 }
 
 .highlight-text {
-    color: var(--text-muted);
+    color: var(--accent-coral-bright);
 }
 
 .skills-hero-subtitle {
     font-size: 1.15rem;
-    color: var(--text-muted);
+    color: #4b5563;
     max-width: 780px;
     line-height: 1.7;
     margin-bottom: 2.75rem;
 }
 
 .skills-page .container {
-    max-width: 1540px;
+    max-width: 1720px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 3.5rem;
 }
@@ -522,14 +524,14 @@
     font-family: 'Outfit', sans-serif;
     font-size: clamp(1.8rem, 3.5vw, 2.6rem);
     font-weight: 700;
-    color: #ffffff;
+    color: var(--text-main);
     margin: 0.35rem 0 0.5rem;
     letter-spacing: -0.03em;
 }
 
 .deepdive-subtitle {
     font-size: 1rem;
-    color: var(--text-muted);
+    color: #4b5563;
     max-width: 720px;
 }
 
@@ -538,14 +540,15 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .filter-btn {
-    background: #141418;
-    color: var(--text-muted);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #ffffff;
+    color: #475569;
+    border: 1px solid rgba(0, 0, 0, 0.09);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
     font-weight: 500;
@@ -559,15 +562,16 @@
 }
 
 .filter-btn:hover {
-    background: #1c1c23;
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.2);
+    background: #f8fafc;
+    color: #0a0b0e;
+    border-color: rgba(0, 0, 0, 0.2);
 }
 
 .filter-btn.active {
-    background: #ffffff;
-    color: #0a0a0c;
-    border-color: #ffffff;
+    background: #0a0b0e;
+    color: #ffffff;
+    border-color: #0a0b0e;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
     font-weight: 600;
 }
 
@@ -575,13 +579,18 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #0a0a0c;
+    background: var(--accent-coral-bright);
     display: inline-block;
+}
+
+.filter-btn.active .btn-dot {
+    background: var(--accent-coral-bright);
+    box-shadow: 0 0 8px rgba(255, 107, 0, 0.8);
 }
 
 .filter-count {
     font-size: 0.75rem;
-    opacity: 0.7;
+    opacity: 0.75;
     font-family: 'JetBrains Mono', monospace;
 }
 
@@ -646,8 +655,8 @@
     font-weight: 600;
     padding: 3px 10px;
     border-radius: var(--radius-full);
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.08);
+    color: #cbd5e1;
     letter-spacing: 0.06em;
 }
 
@@ -667,7 +676,7 @@
 }
 
 .bento-summary {
-    color: var(--text-muted);
+    color: #94a3b8;
     font-size: 0.94rem;
     line-height: 1.6;
     margin-bottom: 1.75rem;
@@ -787,10 +796,10 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.68rem;
     font-weight: 600;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.08);
     padding: 3px 8px;
     border-radius: var(--radius-full);
-    color: var(--text-muted);
+    color: #cbd5e1;
 }
 
 .proficiency-meters-list {
@@ -876,7 +885,7 @@
 
 .metric-label {
     font-size: 0.85rem;
-    color: var(--text-muted);
+    color: #94a3b8;
     font-weight: 500;
 }
 
@@ -901,7 +910,7 @@
 }
 
 .cta-content p {
-    color: var(--text-muted);
+    color: #cbd5e1;
     font-size: 1rem;
 }
 
@@ -917,7 +926,7 @@
     justify-content: center;
     background: transparent;
     color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.28);
     font-family: 'Outfit', sans-serif;
     font-size: 0.88rem;
     font-weight: 600;
@@ -1015,11 +1024,12 @@
     }
     .agent-pipeline-visual {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
     }
     .pipeline-arrow {
         transform: rotate(90deg);
-        margin: 4px 0;
+        margin: 6px 0;
+        align-self: center;
     }
     .cta-actions {
         flex-direction: column;

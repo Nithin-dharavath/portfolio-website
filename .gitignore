@@ -54,10 +54,15 @@ tmp/
 temp/
 *.tmp
 
-# OpenCode / Claude / Codex
+# OpenCode / Claude / Codex / Agent Instructions
 .opencode/
 .claude/
 .codex/
+.agents/
+AGENTS.md
+claude.md
+*agents*.md
+*agent*.md
 
 # Python Packaging
 pip-wheel-metadata/

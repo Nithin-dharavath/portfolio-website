@@ -41,3 +41,45 @@ class TestHtmlRoutes:
         index_resp = await client.get("/")
         skills_resp = await client.get("/skills")
         assert index_resp.text != skills_resp.text
+
+    async def test_favicon_ico_route(self, client):
+        response = await client.get("/favicon.ico")
+        assert response.status_code == 200
+
+    async def test_accessibility_skip_link_and_landmarks(self, client):
+        index_resp = await client.get("/")
+        assert 'class="skip-link"' in index_resp.text
+        assert 'id="main-content"' in index_resp.text
+
+        skills_resp = await client.get("/skills")
+        assert 'id="main-content"' in skills_resp.text
+
+    async def test_contact_form_feedback_element(self, client):
+        response = await client.get("/")
+        assert 'id="contact-form-feedback"' in response.text
+        assert 'aria-live="polite"' in response.text
+
+    async def test_robots_txt_route(self, client):
+        response = await client.get("/robots.txt")
+        assert response.status_code == 200
+        assert "User-agent: *" in response.text
+        assert "Sitemap:" in response.text
+
+    async def test_sitemap_xml_route(self, client):
+        response = await client.get("/sitemap.xml")
+        assert response.status_code == 200
+        assert "urlset" in response.text
+
+    async def test_seo_search_optimization_and_profiles(self, client):
+        response = await client.get("/")
+        assert response.status_code == 200
+        text = response.text
+        assert 'name="keywords"' in text
+        assert 'name="author"' in text
+        assert "https://www.linkedin.com/in/nithin-dharavathu/" in text
+        assert "https://github.com/Nithin-dharavath" in text
+        assert "application/ld+json" in text
+        assert '"@type": "Person"' in text
+        assert '"@type": "ProfilePage"' in text
+        assert '"sameAs"' in text
+        assert 'rel="me noopener noreferrer"' in text

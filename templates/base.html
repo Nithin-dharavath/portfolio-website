@@ -5,36 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="{{ request.url.scheme }}://{{ request.url.netloc }}{{ request.url.path }}">
     <title>{% block title %}Nithin Dharavath | AI Engineer, Freelancer &amp; AI Agent Builder{% endblock %}</title>
-    <meta name="description" content="{% block description %}Professional portfolio of Nithin Dharavath, an AI Engineer and Freelancer specializing in autonomous multi-agent systems, LLM pipelines, and high-performance applications.{% endblock %}">
+    <meta name="description" content="{% block description %}Official portfolio of Nithin Dharavath (Nithin Dharavathu) — AI Engineer and Freelancer specializing in autonomous multi-agent systems, LLM pipelines, and production backend architecture. Connect on LinkedIn and explore open-source code on GitHub.{% endblock %}">
+    <meta name="keywords" content="Nithin Dharavath, Nithin Dharavathu, Nithin Dharavath LinkedIn, Nithin Dharavath GitHub, Nithin Dharavath Portfolio, Nithin-dharavath, AI Engineer, AI Agent Builder, Autonomous Agents, LLM Pipelines, Python Developer, FastAPI, Machine Learning Engineer, Freelance AI Engineer">
+    <meta name="author" content="Nithin Dharavath">
+    <meta name="creator" content="Nithin Dharavath">
+    <meta name="publisher" content="Nithin Dharavath">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="application-name" content="Nithin Dharavath Portfolio">
+    <meta name="apple-mobile-web-app-title" content="Nithin Dharavath">
+    <meta name="theme-color" content="#030712">
+    <meta name="color-scheme" content="dark">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:site_name" content="Nithin Dharavath Portfolio">
     <meta property="og:title" content="{% block og_title %}Nithin Dharavath | AI Engineer, Freelancer &amp; AI Agent Builder{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}Professional portfolio of Nithin Dharavath, an AI Engineer and Freelancer specializing in autonomous multi-agent systems, LLM pipelines, and high-performance applications.{% endblock %}">
-    <meta property="og:type" content="website">
+    <meta property="og:description" content="{% block og_description %}Official portfolio of Nithin Dharavath (Nithin Dharavathu) — AI Engineer and Freelancer specializing in autonomous multi-agent systems, LLM pipelines, and production backend architecture. Connect on LinkedIn and explore open-source code on GitHub.{% endblock %}">
+    <meta property="og:type" content="profile">
     <meta property="og:url" content="{{ request.url.scheme }}://{{ request.url.netloc }}{{ request.url.path }}">
-    <meta property="og:image" content="/static/og-image.svg">
+    <meta property="og:image" content="{{ request.url.scheme }}://{{ request.url.netloc }}/static/og-image.svg">
+    <meta property="og:image:secure_url" content="{{ request.url.scheme }}://{{ request.url.netloc }}/static/og-image.svg">
+    <meta property="og:image:type" content="image/svg+xml">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Nithin Dharavath - AI Engineer &amp; Systems Developer Portfolio">
+    <meta property="profile:first_name" content="Nithin">
+    <meta property="profile:last_name" content="Dharavath">
+    <meta property="profile:username" content="Nithin-dharavath">
+    <meta property="og:see_also" content="https://github.com/Nithin-dharavath">
+    <meta property="og:see_also" content="https://www.linkedin.com/in/nithin-dharavathu/">
+
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{% block twitter_title %}Nithin Dharavath | AI Engineer, Freelancer &amp; AI Agent Builder{% endblock %}">
-    <meta name="twitter:description" content="{% block twitter_description %}Professional portfolio of Nithin Dharavath, an AI Engineer and Freelancer specializing in autonomous multi-agent systems, LLM pipelines, and high-performance applications.{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}Official portfolio of Nithin Dharavath (Nithin Dharavathu) — AI Engineer and Freelancer specializing in autonomous multi-agent systems, LLM pipelines, and production backend architecture. Connect on LinkedIn and explore open-source code on GitHub.{% endblock %}">
+    <meta name="twitter:image" content="{{ request.url.scheme }}://{{ request.url.netloc }}/static/og-image.svg">
+    <meta name="twitter:image:alt" content="Nithin Dharavath - AI Engineer &amp; Systems Developer Portfolio">
+
+    <!-- Schema.org JSON-LD Structured Data for Google Knowledge Graph & Social Entity Disambiguation -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Nithin Dharavath",
-        "url": "{{ request.url.scheme }}://{{ request.url.netloc }}/",
-        "jobTitle": "AI Engineer, Freelancer & AI Agent Builder",
-        "sameAs": [
-            "https://github.com/Nithin-dharavath",
-            "https://www.linkedin.com/in/nithin-dharavathu/"
+        "@graph": [
+            {
+                "@type": "Person",
+                "@id": "{{ request.url.scheme }}://{{ request.url.netloc }}/#person",
+                "name": "Nithin Dharavath",
+                "alternateName": [
+                    "Nithin Dharavathu",
+                    "Nithin",
+                    "Nithin-dharavath"
+                ],
+                "url": "{{ request.url.scheme }}://{{ request.url.netloc }}/",
+                "image": "{{ request.url.scheme }}://{{ request.url.netloc }}/static/og-image.svg",
+                "jobTitle": "AI Engineer, Freelancer & AI Agent Builder",
+                "worksFor": {
+                    "@type": "Organization",
+                    "name": "Independent AI Engineering & Freelance"
+                },
+                "email": "mailto:nithindharavath01@gmail.com",
+                "sameAs": [
+                    "https://github.com/Nithin-dharavath",
+                    "https://www.linkedin.com/in/nithin-dharavathu/",
+                    "https://linkedin.com/in/nithin-dharavathu",
+                    "https://github.com/nithin-dharavath"
+                ],
+                "description": "AI Engineer specializing in autonomous multi-agent networks, LLM pipelines, and production machine learning architectures.",
+                "knowsAbout": [
+                    "Artificial Intelligence",
+                    "Autonomous AI Agents",
+                    "Large Language Models (LLMs)",
+                    "Multi-Agent Systems",
+                    "Python",
+                    "FastAPI",
+                    "Machine Learning",
+                    "Backend Architecture",
+                    "Cloud Infrastructure"
+                ]
+            },
+            {
+                "@type": "ProfilePage",
+                "@id": "{{ request.url.scheme }}://{{ request.url.netloc }}/#profilepage",
+                "url": "{{ request.url.scheme }}://{{ request.url.netloc }}/",
+                "name": "Nithin Dharavath | Portfolio & Profiles",
+                "isPartOf": {
+                    "@type": "WebSite",
+                    "@id": "{{ request.url.scheme }}://{{ request.url.netloc }}/#website"
+                },
+                "about": {
+                    "@id": "{{ request.url.scheme }}://{{ request.url.netloc }}/#person"
+                },
+                "mainEntity": {
+                    "@id": "{{ request.url.scheme }}://{{ request.url.netloc }}/#person"
+                }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "{{ request.url.scheme }}://{{ request.url.netloc }}/#website",
+                "name": "Nithin Dharavath - Portfolio",
+                "alternateName": [
+                    "Nithin Dharavath Portfolio",
+                    "Nithin Dharavathu Portfolio",
+                    "Nithin-dharavath Portfolio"
+                ],
+                "url": "{{ request.url.scheme }}://{{ request.url.netloc }}/",
+                "author": {
+                    "@id": "{{ request.url.scheme }}://{{ request.url.netloc }}/#person"
+                },
+                "publisher": {
+                    "@id": "{{ request.url.scheme }}://{{ request.url.netloc }}/#person"
+                }
+            }
         ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Nithin Dharavath - Portfolio",
-        "url": "{{ request.url.scheme }}://{{ request.url.netloc }}/"
     }
     </script>
     <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
@@ -45,7 +127,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="{% if active_page == 'home' %}home-page{% endif %}">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <canvas id="bg-3d-canvas" class="bg-3d-canvas" aria-hidden="true"></canvas>
 
     <!-- Right Edge Scroll Indicator -->
@@ -80,27 +163,36 @@
         <div class="container nav-container">
             <a href="/" class="nav-brand-group">
                 <span class="brand-symbol" aria-hidden="true">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                        <rect width="24" height="24" rx="6" fill="#f04438"/>
-                        <path d="M12 4L13.8 10.2L20 12L13.8 13.8L12 20L10.2 13.8L4 12L10.2 10.2L12 4Z" fill="#ffffff"/>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2.5L20.2 7.2V16.8L12 21.5L3.8 16.8V7.2L12 2.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        <circle cx="12" cy="12" r="3" fill="currentColor"/>
                     </svg>
                 </span>
                 <span class="nav-brand-text">
-                    Nithin <span>Dharavathu</span>
+                    Nithin <span class="nav-brand-last">Dharavathu</span>
                 </span>
             </a>
 
             <nav class="nav-links" id="primary-nav" aria-label="Primary Navigation">
                 <a href="/" class="nav-link {% if active_page == 'home' %}active{% endif %}">Home</a>
                 <a href="/#about" class="nav-link">About</a>
-                <a href="https://github.com/Nithin-dharavath" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
+                <a href="https://github.com/Nithin-dharavath" target="_blank" rel="me noopener noreferrer" class="nav-link">GitHub</a>
                 <a href="/skills" class="nav-link {% if active_page == 'skills' %}active{% endif %}">Skills</a>
                 <a href="/#projects" class="nav-link">Projects</a>
                 <a href="/#contact" class="nav-link">Contact</a>
             </nav>
 
             <div class="nav-actions">
-                <a href="/#contact" class="btn-build">Let's Build</a>
+                <div class="nav-availability" aria-label="Availability Status: Open to Opportunities">
+                    <span class="nav-avail-kicker">AVAILABILITY</span>
+                    <span class="nav-avail-status">
+                        <span class="nav-status-dot" aria-hidden="true"></span>
+                        Open to Opportunities
+                    </span>
+                </div>
+                <a href="/#contact" class="btn-build btn-menu-pill" aria-label="Get in touch with Nithin">
+                    <span class="menu-pill-dash">&mdash;</span> LET'S CONNECT
+                </a>
                 <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
                     <span></span>
                     <span></span>
@@ -124,10 +216,10 @@
                     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nithindharavath01@gmail.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Email">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     </a>
-                    <a href="https://www.linkedin.com/in/nithin-dharavathu/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/nithin-dharavathu/" target="_blank" rel="me noopener noreferrer" class="social-icon" aria-label="LinkedIn">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                     </a>
-                    <a href="https://github.com/Nithin-dharavath" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+                    <a href="https://github.com/Nithin-dharavath" target="_blank" rel="me noopener noreferrer" class="social-icon" aria-label="GitHub">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     </a>
                 </div>

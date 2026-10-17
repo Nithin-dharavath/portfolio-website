@@ -18,7 +18,7 @@
   <circle cx="1000" cy="500" r="200" fill="url(#glow1)"/>
   <rect x="80" y="240" width="12" height="150" rx="6" fill="url(#accent)"/>
   <text x="120" y="290" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="700" fill="#ffffff">Nithin Dharavath</text>
-  <text x="120" y="350" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="500" fill="#a1a1aa">Backend Developer, Freelancer &amp; AI Agent Builder</text>
+  <text x="120" y="350" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="500" fill="#a1a1aa">AI Engineer, Freelancer &amp; AI Agent Builder</text>
   <rect x="120" y="380" width="80" height="3" rx="1.5" fill="url(#accent)"/>
   <text x="120" y="440" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#6366f1" letter-spacing="2">PORTFOLIO</text>
   <rect x="1000" y="540" width="8" height="50" rx="4" fill="url(#accent)" opacity="0.3"/>

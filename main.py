@@ -64,9 +64,19 @@ app.add_middleware(SecurityHeadersMiddleware)
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
+@app.get("/robots.txt", response_class=FileResponse)
+async def robots():
+    return FileResponse("static/robots.txt")
+
+
 @app.get("/sitemap.xml", response_class=FileResponse)
 async def sitemap():
     return FileResponse("static/sitemap.xml")
+
+
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    return FileResponse("static/favicon.ico")
 
 
 @app.exception_handler(404)
